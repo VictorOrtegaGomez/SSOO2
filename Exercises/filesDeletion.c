@@ -33,12 +33,12 @@ void deleteFile (const char *path){
 		exit(EXIT_FAILURE);
 	}
 
-	while ((statBuf.st_nlink > 0) && (node = readdir(dp)) != NULL){
+	while ((node = readdir(dp)) != NULL){
 		sprintf(name, "%s/%s", path, node->d_name);
 
 		if(strcmp(node->d_name, ".") == 0 || strcmp(node->d_name, "..") == 0) continue;
 
-		if(stat(name, &statBufAux) == -1) printf(stderr, "Error. %s could not be open\n", path);
+		if(stat(name, &statBufAux) == -1) fprintf(stderr, "Error. %s could not be open\n", path);
 
 		if(S_ISDIR(statBufAux.st_mode)) deleteFile(name);
 		else{
@@ -46,11 +46,16 @@ void deleteFile (const char *path){
 				fprintf(stderr, "Error. File %s could not be deleted\n", name);
 				exit(EXIT_FAILURE);
 			}
-		}
-		statBuf.st_nlink--;		
+			
+		}		
+		
 	}
 
-	rmdir(path);
+	if(rmdir(path) == -1){
+		fprintf(stderr, "Error. Directory %s could not be deleted\n", path);
+		closedir(dp);
+		exit(EXIT_FAILURE);
+	}
 
 	closedir(dp);
 }
@@ -58,7 +63,8 @@ void deleteFile (const char *path){
 int main(int argc, char*argv[]){
 
     if(argc != 2){
-        printf("Error. Directory or file name must be introduced.");
+        printf("Error. Only directory or file name must be introduced. Number of arguments: %d\n", argc);
+		printf("%s\n%s\n%s\n", argv[0], argv[1], argv[2]);
         exit(EXIT_FAILURE);
     }
 

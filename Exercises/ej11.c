@@ -9,7 +9,7 @@ int main(int argc, char*argv[]){
     int status;
 
     if(argc != 2){
-        printf("Error. Directory name must be introduced.");
+        printf("Error. Only directory name must be introduced.");
         exit(EXIT_FAILURE);
     }
     
@@ -17,7 +17,7 @@ int main(int argc, char*argv[]){
         fprintf(stderr, "Error when creating the child process\n");
         exit(EXIT_FAILURE);
     } else if(pid == 0) {
-        execl("./filesDeletion", NULL, argv[1], NULL);
+        execl("./filesDeletion", argv[0], argv[1], NULL);
         fprintf(stderr,"Error in filesDeletion execution\n");
         exit(EXIT_FAILURE);
     }
