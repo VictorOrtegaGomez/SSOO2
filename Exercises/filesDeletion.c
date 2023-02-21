@@ -7,12 +7,12 @@
 #include <sys/types.h>
 #include <fcntl.h>
 
-#define MAX_PATH 256
+#define MAX_PATH 4098
 
 void deleteFile (const char *path){
 	DIR *dp;
 	struct dirent *node;
-	struct stat statBuf;
+	struct stat statBuf, statBufAux;
 	char name[MAX_PATH];
 
 	if(stat(path, &statBuf) == -1){
@@ -33,20 +33,26 @@ void deleteFile (const char *path){
 		exit(EXIT_FAILURE);
 	}
 
-	while (statBuf.st_nlink != 0 && (node = readdir(dp)) != NULL){
+	while ((statBuf.st_nlink > 0) && (node = readdir(dp)) != NULL){
 		sprintf(name, "%s/%s", path, node->d_name);
 
 		if(strcmp(node->d_name, ".") == 0 || strcmp(node->d_name, "..") == 0) continue;
 
-		if(S_ISDIR(statBuf.st_mode)) deleteFile(name);
+		if(stat(name, &statBufAux) == -1) printf(stderr, "Error. %s could not be open\n", path);
 
-		if(remove(name) == -1){
-			fprintf(stderr, "Error. File %s could not be deleted\n", name);
-			exit(EXIT_FAILURE);
+		if(S_ISDIR(statBufAux.st_mode)) deleteFile(name);
+		else{
+			if(remove(name) == -1){
+				fprintf(stderr, "Error. File %s could not be deleted\n", name);
+				exit(EXIT_FAILURE);
+			}
 		}
-
 		statBuf.st_nlink--;		
 	}
+
+	rmdir(path);
+
+	closedir(dp);
 }
 
 int main(int argc, char*argv[]){
