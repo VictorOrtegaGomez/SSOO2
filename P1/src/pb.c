@@ -45,7 +45,6 @@ void copyExamFiles(const char *fileName){
         }else{
             /*We copy the exam files*/
             token = strtok(NULL, " ");
-            fprintf(stdout, "Copying exam files for: %s\n", token);
 
             switch (*token){
                 case 'A':
