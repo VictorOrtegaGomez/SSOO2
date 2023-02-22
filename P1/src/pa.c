@@ -40,7 +40,7 @@ int main(int argc, char*argv[]){
 
     DIR *dp;
 
-    /*It is checked that we have all the arguments we need. File named must be an argument*/
+    /*It is checked that we have all the arguments we need. File name must be an argument*/
     if(argc != 2){
         fprintf(stderr,"Error. Only file name must be introduced\n");
         exit(EXIT_FAILURE);
