@@ -24,7 +24,6 @@ void copyExamFiles(const char *fileName){
     char directoryName[MAXIMUM_NAME_SIZE];
     char examName[MAXIMUM_NAME_SIZE];
     char *token;
-    char *examType;
 
     /*We open the file*/
     if((file = fopen(fileName, "r")) == NULL){
@@ -48,7 +47,9 @@ void copyExamFiles(const char *fileName){
 
             switch (*token){
                 case 'A':
-                    sprintf(examName, "%s/%s", directoryName, EXAM_A_NAME);
+                    strcpy(examName, directoryName);
+                    strcat(examName, "/");
+                    strcat(examName, EXAM_A_NAME);
 
                     if(link(EXAM_A_PATH, examName) == -1){
                         fprintf(stderr, "Error. File %s could not be copied\n", EXAM_A_NAME);
@@ -58,7 +59,9 @@ void copyExamFiles(const char *fileName){
                     break;
 
                 case 'B':
-                    sprintf(examName, "%s/%s", directoryName, EXAM_B_NAME);
+                    strcpy(examName, directoryName);
+                    strcat(examName, "/");
+                    strcat(examName, EXAM_B_NAME);
 
                     if(link(EXAM_B_PATH, examName) == -1){
                         fprintf(stderr, "Error. File %s could not be copied\n", EXAM_B_NAME);
@@ -67,12 +70,18 @@ void copyExamFiles(const char *fileName){
                     break;
 
                 case 'C':
-                    sprintf(examName, "%s/%s", directoryName, EXAM_C_NAME);
+                    strcpy(examName, directoryName);
+                    strcat(examName, "/");
+                    strcat(examName, EXAM_C_NAME);
 
                     if(link(EXAM_C_PATH, examName) == -1){
                         fprintf(stderr, "Error. File %s could not be copied\n", EXAM_C_NAME);
                         exit(EXIT_FAILURE);
                     }
+                    break;
+
+                default:
+                    fprintf(stderr, "Error. Exam type %s is not valid\n", token);
                     break;
             }            
         }
