@@ -56,7 +56,6 @@ void writeResultFiles(int writingPipePointer, const char *fileName){
 
             /*We calculate the mark is needed*/
             newMark = 10 - atoi(token);
-            printf("mark%d\n",newMark);
 
             /*We create the file where the mark needed will be written*/
             strcpy(resultFileName, directoryName);
