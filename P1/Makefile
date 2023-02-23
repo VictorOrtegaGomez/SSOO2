@@ -10,7 +10,7 @@ CC := gcc
 all : dirs manager pa pb pc
 
 dirs:
-	mkdir -p $(DIROBJ) $(DIREXE)
+	mkdir -p $(DIROBJ) $(DIREXE) $(DIRHEA) $(DIRSRC)
 
 manager: $(DIROBJ)manager.o 
 	$(CC) -o $(DIREXE)$@ $^ $(LDLIBS)
