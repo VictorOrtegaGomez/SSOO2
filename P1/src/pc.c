@@ -24,8 +24,9 @@ void writeResultFiles(int writingPipePointer, const char *fileName){
     char line[MAXIMUM_LINE_SIZE];
     char directoryName[MAXIMUM_NAME_SIZE];
     char resultFileName[MAXIMUM_NAME_SIZE];
-    char resultSentence[sizeof(RESULT_SENTENCE) + 2];
-    char *mark;
+    char resultSentence[sizeof(RESULT_SENTENCE)];
+    int newMark;
+    char newMarkChar[2];
     char *token;
 
     /*We open the file*/
@@ -54,7 +55,8 @@ void writeResultFiles(int writingPipePointer, const char *fileName){
             }
 
             /*We calculate the mark is needed*/
-            mark = "10" - *token;
+            newMark = 10 - atoi(token);
+            printf("mark%d\n",newMark);
 
             /*We create the file where the mark needed will be written*/
             strcpy(resultFileName, directoryName);
@@ -66,8 +68,9 @@ void writeResultFiles(int writingPipePointer, const char *fileName){
             }
 
             /*We write on the file*/
+            sprintf(newMarkChar, "%d", newMark);
             strcpy(resultSentence, RESULT_SENTENCE);
-            strcat(resultSentence, mark);
+            strcat(resultSentence, newMarkChar);
             
             if(write(resultFilePointer, resultSentence, sizeof(resultSentence)) != sizeof(resultSentence)){
                 fprintf(stderr, "Error. File %s could not be written\n", resultFileName);
