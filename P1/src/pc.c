@@ -25,7 +25,7 @@ void writeResultFiles(int writingPipePointer, const char *fileName){
     char directoryName[MAXIMUM_NAME_SIZE];
     char resultFileName[MAXIMUM_NAME_SIZE];
     char resultSentence[sizeof(RESULT_SENTENCE) + 2];
-    char mark;
+    char *mark;
     char *token;
 
     /*We open the file*/
@@ -54,7 +54,7 @@ void writeResultFiles(int writingPipePointer, const char *fileName){
             }
 
             /*We calculate the mark is needed*/
-            mark = 10 - atoi(token);
+            mark = "10" - *token;
 
             /*We create the file where the mark needed will be written*/
             strcpy(resultFileName, directoryName);
