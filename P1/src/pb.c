@@ -51,7 +51,7 @@ void copyExamFiles(const char *fileName){
                     strcat(examName, "/");
                     strcat(examName, EXAM_A_NAME);
 
-                    if(link(EXAM_A_PATH, examName) == -1){
+                    if(symlink(EXAM_A_PATH, examName) == -1){
                         fprintf(stderr, "Error. File %s could not be copied\n", EXAM_A_NAME);
                         exit(EXIT_FAILURE);
                     }
@@ -63,7 +63,7 @@ void copyExamFiles(const char *fileName){
                     strcat(examName, "/");
                     strcat(examName, EXAM_B_NAME);
 
-                    if(link(EXAM_B_PATH, examName) == -1){
+                    if(symlink(EXAM_B_PATH, examName) == -1){
                         fprintf(stderr, "Error. File %s could not be copied\n", EXAM_B_NAME);
                         exit(EXIT_FAILURE);
                     }
@@ -74,7 +74,7 @@ void copyExamFiles(const char *fileName){
                     strcat(examName, "/");
                     strcat(examName, EXAM_C_NAME);
 
-                    if(link(EXAM_C_PATH, examName) == -1){
+                    if(symlink(EXAM_C_PATH, examName) == -1){
                         fprintf(stderr, "Error. File %s could not be copied\n", EXAM_C_NAME);
                         exit(EXIT_FAILURE);
                     }
