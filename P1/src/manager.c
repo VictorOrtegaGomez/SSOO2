@@ -23,6 +23,7 @@
 #define PROCESS_B_FAILURE "Error. Process B finished with errors\nFIN DE PROGRAMA"
 #define PROCESS_C_SUCCESS "Creación de archivos con nota necesaria para alcanzar la nota de corte, finalizada."
 #define PROCESS_C_FAILURE "Error. Process C finished with errors\nFIN DE PROGRAMA"
+#define MEAN_MESSAGE "La nota media de la clase es: "
 #define READING 0
 #define WRITING 1
 #define WRITING_PIPE_SIZE 256
@@ -37,6 +38,7 @@ void endProcesses();
 void signalHandler(int signal);
 void writeFile(int filePointer, char *message);
 int meanCalculation(int readingPipePointer);
+void writeMean (int rdPipe, int logFilePointer);
 
 pid_t pids[NUMBER_OF_PROCESSES];
 int logFilePointer;
@@ -44,7 +46,7 @@ int logFilePointer;
 int main(int argc, char*argv[]){
 
     pid_t pidBC;
-    int statusA, statusBC, mean, i;
+    int statusA, statusBC, i;
     int pipePointers[2];
     char wrPipe[WRITING_PIPE_SIZE];
 
@@ -112,14 +114,6 @@ int main(int argc, char*argv[]){
         writeFile(logFilePointer, "Error. The child process C could not be executed\nTerminating program\n");
         exit(EXIT_FAILURE);
     }
-
-    /*Mean calculation*/
-    printf("Calculating mean...\n");
-    if((mean = meanCalculation(pipePointers[READING])) == EXIT_FAILURE){
-        writeFile(logFilePointer, "Error. Mean calculation failed\nTerminating program\n");
-        exit(EXIT_FAILURE);
-    }
-    printf("Mean: %d\n", mean);
     
     /*We wait for the child processes B and C to finish*/
     for(i = 1; i < NUMBER_OF_PROCESSES; i++){     
@@ -134,7 +128,10 @@ int main(int argc, char*argv[]){
             else writeFile(logFilePointer, PROCESS_B_FAILURE);
             pids[PROCESS_B_ARRAY_POSITION] = 0;
         }else if(pidBC == pids[PROCESS_C_ARRAY_POSITION]){
-            if(statusBC == EXIT_SUCCESS) writeFile(logFilePointer, PROCESS_C_SUCCESS);
+            if(statusBC == EXIT_SUCCESS){
+                writeFile(logFilePointer, PROCESS_C_SUCCESS);
+                writeMean(pipePointers[READING], logFilePointer);
+            } 
             else writeFile(logFilePointer, PROCESS_C_FAILURE);
             pids[PROCESS_C_ARRAY_POSITION] = 0;
         }
@@ -143,6 +140,21 @@ int main(int argc, char*argv[]){
     writeFile(logFilePointer, LAST_LOG_LINE);
 
     exit(EXIT_SUCCESS);
+}
+
+void writeMean (int rdPipe, int logFilePointer){
+    char message[sizeof(MEAN_MESSAGE)];
+    char meanChar [2];
+    int mean = 0;
+
+    if(read(rdPipe, &mean, sizeof(int)) == -1) writeFile(logFilePointer, "Error. Mean could not be read\nTerminating program\n");
+
+    sprintf(meanChar, "%d", mean);
+    strcpy(message, MEAN_MESSAGE);
+    strcat(message, meanChar);
+
+    writeFile(logFilePointer, message);
+    
 }
 
 void deleteFile (const char *path){
@@ -210,8 +222,17 @@ void endProcesses(pid_t pids[], int logFilePointer){
 }
 
 void signalHandler(int signal){
+
+    pid_t pidD;
+
     endProcesses(pids, logFilePointer);
-    deleteFile(MAIN_DIRECTORY_NAME);
+
+    if((pidD = fork()) == 0){
+        deleteFile(MAIN_DIRECTORY_NAME);
+    }else{
+        waitpid(pidD, NULL, 0);
+    }
+
     writeFile(logFilePointer, "Ctrl+C pressed. Processes killed and files deleted\n");
     writeFile(logFilePointer, LAST_LOG_LINE);
     exit(EXIT_SUCCESS);
@@ -223,24 +244,5 @@ void writeFile(int filePointer, char *message){
         fprintf(stderr, "Error. File could not be written\n");
         exit(EXIT_FAILURE);
     }
-}
-
-int meanCalculation(int readingPipePointer){
     
-    char mark[1];
-    int mean = 0;
-    int counter = 0;
-
-    /*We read process C marks and calculate the mean*/
-
-    do{
-        if(read(readingPipePointer, mark, sizeof(mark)) < 0){
-                fprintf(stderr, "Error. Pipe could not be read\nTerminating program\n");
-                return(EXIT_FAILURE);
-        }
-        mean += atoi(mark);
-        counter++;
-    }while (*mark != EOF);
-
-    return mean/counter;
 }

@@ -28,6 +28,8 @@ void writeResultFiles(int writingPipePointer, const char *fileName){
     int newMark;
     char newMarkChar[2];
     char *token;
+    int mean = 0;
+    int numberOfStudents = 0;
 
     /*We open the file*/
     if((file = fopen(fileName, "r")) == NULL){
@@ -49,13 +51,10 @@ void writeResultFiles(int writingPipePointer, const char *fileName){
             /*We get the mark*/
             for(i = 0; i < 2; i++) token = strtok(NULL, " ");
 
-            /*We comunicate the old mark to the manager process*/
-            if(write(writingPipePointer, token, sizeof(token)) != sizeof(token)){
-                fprintf(stderr, "Error. Pipe could not be written\n");
-            }
-
-            /*We calculate the mark is needed*/
+            /*We calculate the mark is needed and add to the mean for later calculation*/
             newMark = 10 - atoi(token);
+            mean += atoi(token);
+            numberOfStudents++;
 
             /*We create the file where the mark needed will be written*/
             strcpy(resultFileName, directoryName);
@@ -74,6 +73,13 @@ void writeResultFiles(int writingPipePointer, const char *fileName){
             if(write(resultFilePointer, resultSentence, sizeof(resultSentence)) != sizeof(resultSentence)){
                 fprintf(stderr, "Error. File %s could not be written\n", resultFileName);
             }
+        }
+
+        /*We calculate the mean and send it to the manager process*/
+        mean = mean / numberOfStudents;
+        
+        if(write(writingPipePointer, &mean, sizeof(mean)) != sizeof(mean)){
+            fprintf(stderr, "Error. Pipe could not be written\n");
         }
         
     }
