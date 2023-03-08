@@ -2,6 +2,8 @@ DIROBJ := obj/
 DIREXE := exec/
 DIRHEA := include/
 DIRSRC := src/
+DIREST := estudiantes/
+LOGFILE := log.txt
 
 CFLAGS := -I$(DIRHEA) -c -Wall -ansi
 LDLIBS := -lpthread -lrt
@@ -30,11 +32,9 @@ daemonBackup: $(DIROBJ)daemonBackup.o
 $(DIROBJ)%.o: $(DIRSRC)%.c
 	$(CC) $(CFLAGS) $^ -o $@
 
-test:
-	./$(DIREXE)manager 3 2 5
-
-solution:
-	./$(DIREXE)manager 2 3 4
+run:
+	./$(DIREXE)manager
+	./$(DIREXE)daemonBackup &
 
 clean : 
-	rm -rf *~ core $(DIROBJ) $(DIREXE) $(DIRHEA)*~ $(DIRSRC)*~
+	rm -rf *~ core $(DIROBJ) $(DIREXE) $(DIREST) $(LOGFILE) $(DIRHEA)*~ $(DIRSRC)*~
