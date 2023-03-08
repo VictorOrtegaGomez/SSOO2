@@ -4,8 +4,8 @@
 
 - `src`: It contains source files
 - `include`: It contains headers files
-- `obj`: It contains the object files when compilation is made. It will be created after MAKEFILE is executed
-- `exec`: It contains the binary files when compilation is made. It will be created after MAKEFILE is executed
+- `obj`: It contains the object files when compilation is made. It will be created after **Makefile** is executed
+- `exec`: It contains the binary files when compilation is made. It will be created after **Makefile** is executed
 - `estudiantes`: It contains the result folders and files from **manager**, **pa**, **pb** and **pc** execution. It will be created after normal execution
 - `MODELOSEXAMEN`: It contains the exam models files that need to be copied to the folders in **estudiantes**
 - `estudiantes.txt`: File from where the information needed by **pa**, **pb** and **pc** processes will be read
@@ -35,13 +35,13 @@ The diferent *name_of_the_process* we can use are:
 - **daemonBackup**
 
 
-In order to clean our project folder we can also make use of the Makefile file. We can do this with:
+In order to clean our project folder we can also make use of the **Makefile** file. We can do this with:
 
 > make clean
 
 `exec`, `obj`, `log.txt`, `estudiantes` will be completed deleted if they existed.
 
 
-After every file compilation is done we can execute the project with:
+After every source file compilation is done, execution can be started with:
 
 > make run
