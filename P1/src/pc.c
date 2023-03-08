@@ -8,6 +8,21 @@
 #include <fcntl.h>
 #include "constants.h"
 
+void writeResultFiles(int writingPipePointer, const char *fileName);
+
+int main(int argc, char* argv[]){
+
+    /*It is checked that we have all the arguments we need. File name must be an argument*/
+    if(argc != 2){
+        fprintf(stderr,"Error. Only file name must be introduced\n");
+        exit(EXIT_FAILURE);
+    }
+
+    writeResultFiles(atoi(argv[0]),argv[1]);
+
+    exit(EXIT_SUCCESS);
+}
+
 void writeResultFiles(int writingPipePointer, const char *fileName){
 
     DIR *dp;
@@ -81,17 +96,4 @@ void writeResultFiles(int writingPipePointer, const char *fileName){
     fclose(file);
     closedir(dp);
     close(resultFilePointer);
-}
-
-int main(int argc, char* argv[]){
-
-    /*It is checked that we have all the arguments we need. File name must be an argument*/
-    if(argc != 2){
-        fprintf(stderr,"Error. Only file name must be introduced\n");
-        exit(EXIT_FAILURE);
-    }
-
-    writeResultFiles(atoi(argv[0]),argv[1]);
-
-    exit(EXIT_SUCCESS);
 }

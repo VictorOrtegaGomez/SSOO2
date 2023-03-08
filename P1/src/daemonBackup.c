@@ -12,7 +12,20 @@
 #include <signal.h>
 #include "constants.h"
 
-int getCurrentTime (char* fecha){
+int getCurrentTime (char *bufDate);
+int backup (const char *path, const char *backupDirectory);
+void signalHandler (int sig);
+
+int main(int argc, char* argv[]){
+
+    signal(SIGALRM, signalHandler);
+    while (1){
+        alarm(TIME_FOR_BACKUP);
+        pause();
+    }
+}
+
+int getCurrentTime (char* bufDate){
 
     time_t currentTime;
     struct tm *localTime;
@@ -27,7 +40,7 @@ int getCurrentTime (char* fecha){
         return(-1);
     }
 
-    sprintf(fecha, "%d-%d-%d-%d:%d:%d", localTime->tm_mday, localTime->tm_mon + 1, localTime->tm_year + 1900, localTime->tm_hour, localTime->tm_min, localTime->tm_sec);
+    sprintf(bufDate, "%d-%d-%d-%d:%d:%d", localTime->tm_mday, localTime->tm_mon + 1, localTime->tm_year + 1900, localTime->tm_hour, localTime->tm_min, localTime->tm_sec);
 
     return 1;
 }
@@ -110,13 +123,4 @@ void signalHandler(int sig){
 	if(backup(currentDirectory, backupPath) == 0) fprintf(stderr, "Error. Backup procedure could not be completed\n");
     else fprintf(stdout, "Backup procedure completed\n");
     
-}
-
-int main(int argc, char* argv[]){
-
-    signal(SIGALRM, signalHandler);
-    while (1){
-        alarm(TIME_FOR_BACKUP);
-        pause();
-    }
 }

@@ -7,6 +7,31 @@
 #include <unistd.h>
 #include "constants.h"
 
+void createDirectories(const char *fileName);
+
+int main(int argc, char*argv[]){
+
+    DIR *dp;
+
+    /*It is checked that we have all the arguments we need. File name must be an argument*/
+    if(argc != 2){
+        fprintf(stderr,"Error. Only file name must be introduced\n");
+        exit(EXIT_FAILURE);
+    }
+
+    if ((dp = opendir(MAIN_DIRECTORY_NAME)) == NULL) {
+		/*We create the main directory which will have every other directory that will be created*/
+        if(mkdir(MAIN_DIRECTORY_NAME, 0777) == -1){
+            fprintf(stderr, "Error. Directory %s could not be created\n", MAIN_DIRECTORY_NAME);
+            exit(EXIT_FAILURE);
+        }
+	}
+
+    createDirectories(argv[1]);
+
+    exit(EXIT_SUCCESS);    
+}
+
 void createDirectories(const char *fileName){
 
     FILE *file;
@@ -31,27 +56,4 @@ void createDirectories(const char *fileName){
     }
 
     fclose(file);
-}
-
-int main(int argc, char*argv[]){
-
-    DIR *dp;
-
-    /*It is checked that we have all the arguments we need. File name must be an argument*/
-    if(argc != 2){
-        fprintf(stderr,"Error. Only file name must be introduced\n");
-        exit(EXIT_FAILURE);
-    }
-
-    if ((dp = opendir(MAIN_DIRECTORY_NAME)) == NULL) {
-		/*We create the main directory which will have every other directory that will be created*/
-        if(mkdir(MAIN_DIRECTORY_NAME, 0777) == -1){
-            fprintf(stderr, "Error. Directory %s could not be created\n", MAIN_DIRECTORY_NAME);
-            exit(EXIT_FAILURE);
-        }
-	}
-
-    createDirectories(argv[1]);
-
-    exit(EXIT_SUCCESS);    
 }
