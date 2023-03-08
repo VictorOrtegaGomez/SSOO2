@@ -12,7 +12,6 @@
 #include <string.h>
 #include "constants.h"
 
-void deleteFiles(const char *path);
 void endProcesses();
 void signalHandler(int signal);
 void writeLogFile(char *message);
@@ -143,67 +142,6 @@ void writeMean (int rdPipe){
     
 }
 
-/*Function that will delete the file introduced. If path is a directory it will delete every file from it and then said directory*/
-
-void deleteFile (const char *path){
-	DIR *dp;
-	struct dirent *node;
-	struct stat statBuf, statBufAux;
-	char name[MAX_PATH];
-
-    /*First we'll see if the path is a directory*/
-
-	if(stat(path, &statBuf) == -1){
-		fprintf(stderr, "Error. %s could not be open\n", path);
-		exit(EXIT_FAILURE);
-	}
-
-    /*If we're dealing with a file and not a directory we'll delete it*/
-
-	if(S_ISREG(statBuf.st_mode)){
-		if(remove(path) == -1){
-			fprintf(stderr, "Error. File %s could not be deleted\n", path);
-			exit(EXIT_FAILURE);
-		}
-		exit(EXIT_SUCCESS);
-	}
-
-    /*If it is a directory we'll read what it contains. If the node we're reading is a file it'll be deleted, otherwise we'll call this funtion again*/
-
-	if ((dp = opendir(path)) == NULL) {
-		fprintf(stderr, "Error. Directory %s could not be open\n", path);
-		exit(EXIT_FAILURE);
-	}
-
-	while ((node = readdir(dp)) != NULL){
-		sprintf(name, "%s/%s", path, node->d_name);
-
-		if(strcmp(node->d_name, ".") == 0 || strcmp(node->d_name, "..") == 0) continue;
-
-		if(stat(name, &statBufAux) == -1) fprintf(stderr, "Unable to open %s It could be a symbolic link, if so deletion is granted\n", name);
-
-		if(S_ISDIR(statBufAux.st_mode)) deleteFile(name);
-		else{
-			if(remove(name) == -1){
-				fprintf(stderr, "Error. File %s could not be deleted\n", name);
-				exit(EXIT_FAILURE);
-			}
-			
-		}		
-		
-	}
-
-    /*Once it is over deleting everything from the directory we'll delete the own directory*/
-
-	if(rmdir(path) == -1){
-		fprintf(stderr, "Error. Directory %s could not be deleted\n", path);
-		closedir(dp);
-		exit(EXIT_FAILURE);
-	}
-
-	closedir(dp);
-}
-
 /*Function that will send a SIGINT signal to all processes in order to stop them*/
 
 void endProcesses(pid_t glbPids[]){
@@ -230,9 +168,11 @@ void signalHandler(int signal){
 
     /*Second we'll relay on a child process that will handle the deletion of the generated files*/
 
-    if((pidD = fork()) == 0){
-        deleteFile(MAIN_DIRECTORY_NAME);
-        exit(EXIT_SUCCESS);
+    if((pidD = fork()) < 0) {
+        writeLogFile("Error. The child process D could not be created\n");
+    } else if(pidD == 0) {
+        execl("./exec/pd", "", MAIN_DIRECTORY_NAME, NULL);
+        writeLogFile("Error. The child process D could not be executed\n");
     }
 
     /*Third we'll write in the log file that CTRL + C signal was received and we'll wait for the previous process to end*/
