@@ -18,32 +18,47 @@ void signalHandler (int sig);
 
 int main(int argc, char* argv[]){
 
+    /*We install de signal handler for SIGALARM signal*/
+
     signal(SIGALRM, signalHandler);
+
+    /*We set up an alarm so the process starts the backup. It must be doing this for a indefinite period of time*/
+
     while (1){
         alarm(TIME_FOR_BACKUP);
         pause();
     }
 }
 
+/*Function that will store in the buffer the current time with the structure day-month-year-hour:minute-second*/
+
 int getCurrentTime (char* bufDate){
 
     time_t currentTime;
     struct tm *localTime;
+
+    /*We get the current system time*/
 
     if((currentTime = time(NULL)) == -1){
         fprintf(stderr, "Error. Current time could not be obtained\n");
         return(-1);
     }
 
+    /*We convert time_t data type to a tm struct*/
+
     if((localTime = localtime(&currentTime)) == NULL){
         fprintf(stderr, "Error. Local time could not be obtained\n");
         return(-1);
     }
 
+    /*We store the current time in the buffer*/
+
     sprintf(bufDate, "%d-%d-%d-%d:%d:%d", localTime->tm_mday, localTime->tm_mon + 1, localTime->tm_year + 1900, localTime->tm_hour, localTime->tm_min, localTime->tm_sec);
 
     return 1;
 }
+
+/*Function that will make a backup of the directory that is passed as an argument*/
 
 int backup (const char *path, const char *backupDirectory){
 	DIR *dp;
