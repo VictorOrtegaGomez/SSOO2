@@ -5,10 +5,7 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <unistd.h>
-
-#define MAXIMUM_LINE_SIZE 100
-#define MAXIMUM_NAME_SIZE 4098
-#define MAIN_DIRECTORY_NAME "estudiantes"
+#include "constants.h"
 
 void createDirectories(const char *fileName){
 

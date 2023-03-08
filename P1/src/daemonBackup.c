@@ -1,3 +1,5 @@
+#define _POSIX_SOURCE
+
 #include <unistd.h>
 #include <stdio.h>
 #include <dirent.h>
@@ -8,10 +10,7 @@
 #include <fcntl.h>
 #include <time.h>
 #include <signal.h>
-
-#define MAX_PATH 4098
-#define MAX_DATE 70
-#define TIME_FOR_BACKUP 60
+#include "constants.h"
 
 int getCurrentTime (char* fecha){
 

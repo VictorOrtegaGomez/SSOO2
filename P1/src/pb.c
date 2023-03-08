@@ -5,16 +5,7 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <unistd.h>
-
-#define MAXIMUM_LINE_SIZE 100
-#define MAXIMUM_NAME_SIZE 4098
-#define MAIN_DIRECTORY_NAME "estudiantes"
-#define EXAM_A_PATH "MODELOSEXAMEN/MODELOA.pdf"
-#define EXAM_B_PATH "MODELOSEXAMEN/MODELOB.pdf"
-#define EXAM_C_PATH "MODELOSEXAMEN/MODELOC.pdf"
-#define EXAM_A_NAME "MODELOA.pdf"
-#define EXAM_B_NAME "MODELOB.pdf"
-#define EXAM_C_NAME "MODELOC.pdf"
+#include "constants.h"
 
 void copyExamFiles(const char *fileName){
 
