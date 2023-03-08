@@ -74,15 +74,17 @@ void writeResultFiles(int writingPipePointer, const char *fileName){
                 fprintf(stderr, "Error. File %s could not be written\n", resultFileName);
             }
         }
-
-        /*We calculate the mean and send it to the manager process*/
-        mean = mean / numberOfStudents;
-        
-        if(write(writingPipePointer, &mean, sizeof(mean)) != sizeof(mean)){
-            fprintf(stderr, "Error. Pipe could not be written\n");
-        }
         
     }
+
+    /*We calculate the mean and send it to the manager process*/
+    mean = mean / numberOfStudents;
+    
+    if(write(writingPipePointer, &mean, sizeof(mean)) != sizeof(mean)){
+        fprintf(stderr, "Error. Pipe could not be written\n");
+    }
+
+    printf("students %d\n mean %d\n", numberOfStudents, mean);
 
     fclose(file);
     closedir(dp);
