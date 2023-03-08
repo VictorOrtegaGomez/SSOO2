@@ -9,7 +9,7 @@ CFLAGS := -I$(DIRHEA) -c -Wall -ansi
 LDLIBS := -lpthread -lrt
 CC := gcc
 
-all : dirs manager pa pb pc daemonBackup
+all : dirs manager pa pb pc pd daemonBackup
 
 dirs:
 	mkdir -p $(DIROBJ) $(DIREXE) $(DIRHEA) $(DIRSRC)
@@ -26,6 +26,9 @@ pb: $(DIROBJ)pb.o
 pc: $(DIROBJ)pc.o 
 	$(CC) -o $(DIREXE)$@ $^ $(LDLIBS)
 
+pd: $(DIROBJ)pd.o 
+	$(CC) -o $(DIREXE)$@ $^ $(LDLIBS)
+
 daemonBackup: $(DIROBJ)daemonBackup.o 
 	$(CC) -o $(DIREXE)$@ $^ $(LDLIBS)
 
@@ -33,8 +36,8 @@ $(DIROBJ)%.o: $(DIRSRC)%.c
 	$(CC) $(CFLAGS) $^ -o $@
 
 run:
-	./$(DIREXE)manager
 	./$(DIREXE)daemonBackup &
+	./$(DIREXE)manager
 
 clean : 
 	rm -rf *~ core $(DIROBJ) $(DIREXE) $(DIREST) $(LOGFILE) $(DIRHEA)*~ $(DIRSRC)*~
