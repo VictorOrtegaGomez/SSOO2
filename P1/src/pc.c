@@ -91,8 +91,6 @@ void writeResultFiles(int writingPipePointer, const char *fileName){
         fprintf(stderr, "Error. Pipe could not be written\n");
     }
 
-    printf("students %d\n mean %d\n", numberOfStudents, mean);
-
     fclose(file);
     closedir(dp);
     close(resultFilePointer);
