@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include "constants.h"
 
+int symlink(const char *target, const char *linkpath); /*We will define symlink so we don't get any warnings when we compile the file*/
 void copyExamFiles(const char *fileName);
 
 int main(int argc, char*argv[]){
