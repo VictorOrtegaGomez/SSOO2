@@ -9,7 +9,7 @@
 #define LIMIT 100000000
 #define NUMTHREADS 12
 
-std::atomic <unsigned int> totalSum;
+std::atomic <unsigned int> totalSum(0);
 
 void sum(int start, int end, std::vector<unsigned int>numberVector){
     unsigned int sum = 0;
@@ -33,8 +33,6 @@ int main(){
     int division = LIMIT/NUMTHREADS;
     unsigned t0, t1;    
     double time;
-
-    totalSum = 0;
 
     t0 = std::clock();
 
