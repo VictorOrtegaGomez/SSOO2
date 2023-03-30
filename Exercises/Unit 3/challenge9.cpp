@@ -44,7 +44,6 @@ void writeVector(){
 }
 
 int main(){
-    std::vector<std::thread>threads;
 
     std::thread tW(writeVector);
     std::thread tR1(readVector);
