@@ -1,5 +1,5 @@
 #include "../include/dataTypes.hpp"
-#include <string>
+
 threadData::threadData(int id, int start, int end, std::string wordToFind){
     this->id = id;
     this->end = end;
