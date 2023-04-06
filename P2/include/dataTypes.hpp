@@ -14,7 +14,7 @@ class threadData {
         int start;
         int end;
         std::string wordToFind;
-        std::queue<SearchResult> queue_words;
+        std::queue<SearchResult> resultsQueue;
     public:
         threadData(int id, int start, int end);
         int getid();
@@ -24,7 +24,7 @@ class threadData {
         void setid(int id);
         void setstart(int start);
         void setend(int end);
-        void queueWord(SearchResult w);
-        SearchResult dequeueWord();
+        void queueResult(SearchResult w);
+        SearchResult dequeueResult();
 };
 #endif

@@ -23,13 +23,13 @@ int threadData::getstart(){
     return this->start;
 }
 std::queue<SearchResult> threadData::getQueue(){
-    return this->queue_words;
+    return this->resultsQueue;
 }
-void threadData::queueWord(SearchResult w){
-    this->queue_words.push(w);
+void threadData::queueResult(SearchResult w){
+    this->resultsQueue.push(w);
 }
-SearchResult threadData::dequeueWord(){
-    SearchResult w = this->queue_words.front();
-    this->queue_words.pop();
+SearchResult threadData::dequeueResult(){
+    SearchResult w = this->resultsQueue.front();
+    this->resultsQueue.pop();
     return w;
 }
