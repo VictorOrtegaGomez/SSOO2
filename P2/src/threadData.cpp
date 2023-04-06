@@ -1,8 +1,10 @@
 #include "../include/dataTypes.hpp"
-threadData::threadData(int id, int start, int end){
+#include <string>
+threadData::threadData(int id, int start, int end, std::string wordToFind){
     this->id = id;
     this->end = end;
     this->start = start;
+    this->wordToFind = wordToFind;
 }
 void threadData::setid(int id){
     this->id = id;
