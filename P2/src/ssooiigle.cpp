@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include"../include/dataTypes.hpp"
+#include "../include/dataTypes.hpp"
 #include <thread>
 #include <functional>
 #include <mutex>
@@ -10,11 +10,12 @@
 
 std::mutex mutexSemaphore;
 
-void saveData(threadData *data, int line, std::string previousWord, std::string nextWord){
+void saveData(threadData *data, int line, std::string word, std::string previousWord, std::string nextWord){
     struct SearchResult result;
 
     result.line = line;
     result.previousWord = previousWord;
+    result.consideredWord = word;
     result.nextWord = nextWord;
 
     /*We lock the semaphore while we're writing the data so there's no inconsistencies. After the writing it'll be unlocked*/
@@ -85,7 +86,7 @@ void searchWord(std::string fileName, threadData *data){
         size_t pos = lineLowerCase.find(wordToFind);
 
         while (pos != std::string::npos){
-            word = lineLowerCase.substr(pos, lineLowerCase.find(" ", pos)-pos);
+            word = line.substr(pos, lineLowerCase.find(" ", pos)-pos);
             
             /*We check that the word is not the last one of the line*/
 
@@ -93,21 +94,21 @@ void searchWord(std::string fileName, threadData *data){
                 
                 /*We check if it is the one before the last word, if so we'll look for the end line character \r instead of the white space character " " */
 
-                if(lineLowerCase.find(" ", pos+word.length()+1) != std::string::npos) nextWord = lineLowerCase.substr(lineLowerCase.find(" ", pos)+1, lineLowerCase.find(" ", pos+word.length()+1)-pos-word.length());
+                if(lineLowerCase.find(" ", pos+word.length()+1) != std::string::npos) nextWord = line.substr(lineLowerCase.find(" ", pos)+1, lineLowerCase.find(" ", pos+word.length()+1)-pos-word.length());
                 
-                else nextWord = lineLowerCase.substr(lineLowerCase.find(" ", pos)+1, lineLowerCase.find("\r", pos+word.length()+1)-pos-word.length());
+                else nextWord = line.substr(lineLowerCase.find(" ", pos)+1, lineLowerCase.find("\r", pos+word.length()+1)-pos-word.length());
 
             } else nextWord = "null";
 
             size_t beginningOfPreviousWord = lineLowerCase.rfind(" ", pos-2);
 
             if (beginningOfPreviousWord != std::string::npos){
-                previousWord = lineLowerCase.substr(beginningOfPreviousWord+1, pos-beginningOfPreviousWord-1);
+                previousWord = line.substr(beginningOfPreviousWord+1, pos-beginningOfPreviousWord-1);
             }
 
             /*We save the results*/
             
-            saveData(data, i, previousWord, nextWord);
+            saveData(data, i, word, previousWord, nextWord);
 
             /*We keep loking for more appearances of the word in the line*/
 
@@ -126,7 +127,7 @@ void printSearchResult(std::vector<threadData> threadsDataResults){
         while (!element.isEmptyList()){
             struct SearchResult result;
             result = element.dequeueResult();
-            std::cout<<"[Hilo " << element.getId() << " inicio: " << element.getStart() << " - final: " << element.getEnd() << "] linea "<< result.line << " :: "<< "..." << result.previousWord << element.getWordToFind()<< " " << result.nextWord << "..."<<std::endl;
+            std::cout<<"[Hilo " << element.getId() << " inicio: " << element.getStart() << " - final: " << element.getEnd() << "] linea "<< result.line << " :: "<< "..." << result.previousWord << result.consideredWord << " " << result.nextWord << "..."<<std::endl;
         }
         
     }

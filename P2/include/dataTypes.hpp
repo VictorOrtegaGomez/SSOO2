@@ -7,6 +7,7 @@ struct SearchResult
     int line;
     std::string previousWord;
     std::string nextWord;
+    std::string consideredWord;
 };
 class threadData {
     private:
