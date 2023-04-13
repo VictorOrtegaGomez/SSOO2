@@ -20,7 +20,7 @@ ssooiigle: $(DIROBJ)ssooiigle.o
 	$(CC) -o $(DIREXE)$@ $^ $(LDLIBS) $(DIRSRC)threadData.cpp
 
 test: 
-	./$(DIREXE)ssooiigle $(DIRTXT)historia.txt castillo 2
+	./$(DIREXE)ssooiigle $(DIRTXT)prueba.txt david 5
 
 $(DIROBJ)%.o: $(DIRSRC)%.cpp
 	$(CC) $(CFLAGS) $^ -o $@
