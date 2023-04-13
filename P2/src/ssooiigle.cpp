@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "../include/dataTypes.hpp"
+#include"../include/dataTypes.hpp"
 #include <thread>
 #include <functional>
 #include <mutex>
@@ -9,6 +9,23 @@
 #include <fstream>
 
 std::mutex mutexSemaphore;
+
+void saveData(threadData *data, int line, std::string previousWord, std::string nextWord){
+    struct SearchResult result;
+
+    result.line = line;
+    result.previousWord = previousWord;
+    result.nextWord = nextWord;
+
+    /*We lock the semaphore while we're writing the data so there's no inconsistencies. After the writing it'll be unlocked*/
+
+    mutexSemaphore.lock();
+
+    data->queueResult(result);
+
+    mutexSemaphore.unlock();
+}
+
 
 /*Funtion that will read and count the number of lines in a file. The return result will be that said number*/
 
@@ -94,22 +111,6 @@ void searchWord(std::string fileName, threadData *data){
 
 /*A SearchResult struct is created and queued in the threadData's queue results*/
 
-void saveData(threadData *data, int line, std::string previousWord, std::string nextWord){
-    struct SearchResult result;
-
-    result.line = line;
-    result.previousWord = previousWord;
-    result.nextWord = nextWord;
-
-    /*We lock the semaphore while we're writing the data so there's no inconsistencies. After the writing it'll be unlocked*/
-
-    mutexSemaphore.lock();
-
-    data->queueResult(result);
-
-    mutexSemaphore.unlock();
-}
-
 /*Funtion that will print the search results*/
 
 void printSearchResult(std::vector<threadData> threadsDataResults){
@@ -173,7 +174,7 @@ int main(int argc, char const *argv[]){
 
     /*We create the threads and assign them the threadData object that belongs to them*/
 
-    for(int i = 0; i < numThreads; i++) threads.push_back(std::thread(i, searchWord, fileName, threadsDataResults[i]));
+    for(int i = 0; i < numThreads; i++) threads.push_back(std::thread(searchWord, fileName, &threadsDataResults[i]));
     
     /*We wait for every thread to finish their task*/
 
