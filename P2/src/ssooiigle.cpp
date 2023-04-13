@@ -2,17 +2,127 @@
 #include <string>
 #include "../include/dataTypes.hpp"
 #include <thread>
-#include <shared_mutex>
+#include <functional>
 #include <mutex>
 #include <vector>
 #include <algorithm>
 #include <fstream>
 
-int calculateTotalLines(std::string fileName);
-void searchWord(std::string fileName, threadData *data);
-void saveData(threadData *data, int line, std::string previousWord, std::string nextWord);
+std::mutex mutexSemaphore;
 
-std::shared_mutex bufferMutex;
+/*Funtion that will read and count the number of lines in a file. The return result will be that said number*/
+
+int calculateTotalLines(std::string fileName){
+    std::ifstream file;
+    std::string line;
+    int numLines = 0;
+
+    file.open(fileName);
+
+    if(file.is_open()){
+        while(getline(file, line)) numLines++;
+    }
+    else return -1;
+
+    file.close();
+
+    return numLines;
+}
+
+void searchWord(std::string fileName, threadData *data){
+
+    std::ifstream file(fileName);
+    std::string line;
+    std::string word;
+    std::string nextWord, previousWord;
+    std::string wordToFind;
+    int startLine;
+    int endLine;
+
+    /*We lock the semaphore while we're reading the data so there's no inconsistencies. After the reading it'll be unlocked*/
+
+    mutexSemaphore.lock();
+
+    wordToFind = data->getWordToFind();
+    startLine = data->getstart();
+    endLine = data->getend();
+
+    mutexSemaphore.unlock();
+
+    /*We skip the lines until reaching the ones that the thread got assigned*/
+
+    for(int i = 0; i < data->getstart() - 1; i++) getline(file, line);
+
+    /*Now we get the first assigned line and we start looking for the word we need. This will go on until we've checked every single line that the thread had assigned*/
+
+    for(int i = data->getstart(); i < data->getend(); i++){
+        getline(file, line);
+        size_t pos = line.find(data->getWordToFind());
+
+        while (pos != std::string::npos){
+            word = line.substr(pos, line.find(" ", pos)-pos);
+            
+            /*We check that the word is not the last one of the line*/
+
+            if (pos+word.length() < line.length()){ 
+                
+                /*We check if it is the one before the last word, if so we'll look for the end line character \r instead of the white space character " " */
+
+                if(line.find(" ", pos+word.length()+1) != std::string::npos) nextWord = line.substr(line.find(" ", pos)+1, line.find(" ", pos+word.length()+1)-pos-word.length());
+                
+                else nextWord = line.substr(line.find(" ", pos)+1, line.find("\r", pos+word.length()+1)-pos-word.length());
+
+            } else nextWord = "null";
+
+            size_t beginningOfPreviousWord = line.rfind(" ", pos-2);
+
+            if (beginningOfPreviousWord != std::string::npos){
+                previousWord = line.substr(beginningOfPreviousWord+1, pos-beginningOfPreviousWord-1);
+            }
+
+            /*We save the results*/
+            
+            saveData(data, i, previousWord, nextWord);
+
+            /*We keep loking for more appearances of the word in the line*/
+
+            pos = line.find(data->getWordToFind(), pos+1);
+        }
+    }
+
+}
+
+/*A SearchResult struct is created and queued in the threadData's queue results*/
+
+void saveData(threadData *data, int line, std::string previousWord, std::string nextWord){
+    struct SearchResult result;
+
+    result.line = line;
+    result.previousWord = previousWord;
+    result.nextWord = nextWord;
+
+    /*We lock the semaphore while we're writing the data so there's no inconsistencies. After the writing it'll be unlocked*/
+
+    mutexSemaphore.lock();
+
+    data->queueResult(result);
+
+    mutexSemaphore.unlock();
+}
+
+/*Funtion that will print the search results*/
+
+void printSearchResult(std::vector<threadData> threadsDataResults){
+    for (threadData& element : threadsDataResults){
+        while (!element.isEmptyList()){
+            struct SearchResult result;
+            result = element.dequeueResult();
+            std::cout<<"[Hilo " << element.getid() << " inicio: " << element.getstart() << "- final: " << element.getend() << "] :: linea "<< result.line << "::"<< "..." << result.previousWord << element.getWordToFind()<< " " << result.nextWord << "..."<<std::endl;
+        }
+        
+    }
+    
+}
 
 int main(int argc, char const *argv[]){
     int numThreads;
@@ -69,105 +179,7 @@ int main(int argc, char const *argv[]){
 
     std::for_each(threads.begin(),threads.end(),std::mem_fn(&std::thread::join));
 
+    printSearchResult(threadsDataResults);
+
     return 0;
-}
-
-/*Funtion that will read and count the number of lines in a file. The return result will be that said number*/
-
-int calculateTotalLines(std::string fileName){
-    std::ifstream file;
-    std::string line;
-    int numLines = 0;
-
-    file.open(fileName);
-
-    if(file.is_open()){
-        while(getline(file, line)) numLines++;
-    }
-    else return -1;
-
-    file.close();
-
-    return numLines;
-}
-
-void searchWord(std::string fileName, threadData *data){
-
-    std::ifstream file(fileName);
-    std::string line;
-    std::string word;
-    std::string nextWord, previousWord;
-    std::string wordToFind;
-    int startLine;
-    int endLine;
-
-    /*We use a shared_lock in order to allow concurrent readings but mutual exclusion when writing which will be achieved in saveData() function*/
-
-    std::shared_lock<std::shared_mutex>lock(bufferMutex);
-
-    wordToFind = data->getWordToFind();
-    startLine = data->getstart();
-    endLine = data->getend();
-
-    lock.unlock();
-
-    /*We skip the lines until reaching the ones that the thread got assigned*/
-
-    for(int i = 0; i < data->getstart() - 1; i++) getline(file, line);
-
-    /*Now we get the first assigned line and we start looking for the word we need. This will go on until we've checked every single line that the thread had assigned*/
-
-    for(int i = data->getstart(); i < data->getend(); i++){
-        getline(file, line);
-        size_t pos = line.find(data->getWordToFind());
-
-        while (pos != std::string::npos){
-            word = line.substr(pos, line.find(" ", pos)-pos);
-            
-            /*We check that the word is not the last one of the line*/
-
-            if (pos+word.length() < line.length()){ 
-                
-                /*We check if it is the one before the last word, if so we'll look for the end line character \r instead of the white space character " " */
-
-                if(line.find(" ", pos+word.length()+1) != std::string::npos) nextWord = line.substr(line.find(" ", pos)+1, line.find(" ", pos+word.length()+1)-pos-word.length());
-                
-                else nextWord = line.substr(line.find(" ", pos)+1, line.find("\r", pos+word.length()+1)-pos-word.length());
-
-            } else nextWord = "null";
-
-            size_t beginningOfPreviousWord = line.rfind(" ", pos-2);
-
-            if (beginningOfPreviousWord != std::string::npos){
-                previousWord = line.substr(beginningOfPreviousWord+1, pos-beginningOfPreviousWord-1);
-            }
-
-            /*We save the results*/
-            
-            saveData(data, i, previousWord, nextWord);
-
-            /*We keep loking for more appearances of the word in the line*/
-
-            pos = line.find(data->getWordToFind(), pos+1);
-        }
-    }
-
-}
-
-/*A SearchResult struct is created and queued in the threadData's queue results*/
-
-void saveData(threadData *data, int line, std::string previousWord, std::string nextWord){
-    struct SearchResult result;
-
-    result.line = line;
-    result.previousWord = previousWord;
-    result.nextWord = nextWord;
-
-    /*We create a unique_lock in order to write the data making sure everything we do it with no runtime errors*/
-
-    std::unique_lock<std::shared_mutex>lock(bufferMutex);
-
-    data->queueResult(result);
-
-    lock.unlock();
 }
