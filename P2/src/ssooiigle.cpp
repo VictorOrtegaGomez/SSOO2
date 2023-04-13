@@ -101,7 +101,7 @@ void searchWord(std::string fileName, threadData *data){
     int startLine;
     int endLine;
 
-    /*We use a shared_lock in order to allow concurrent readings but mutual exclusion when writing*/
+    /*We use a shared_lock in order to allow concurrent readings but mutual exclusion when writing which will be achieved in saveData() function*/
 
     std::shared_lock<std::shared_mutex>lock(bufferMutex);
 
