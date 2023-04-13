@@ -49,7 +49,7 @@ int calculateTotalLines(std::string fileName){
 void searchWord(std::string fileName, threadData *data){
 
     std::ifstream file(fileName);
-    std::string line;
+    std::string line, lineLowerCase;
     std::string word;
     std::string nextWord, previousWord;
     std::string wordToFind;
@@ -61,40 +61,48 @@ void searchWord(std::string fileName, threadData *data){
     mutexSemaphore.lock();
 
     wordToFind = data->getWordToFind();
-    startLine = data->getstart();
-    endLine = data->getend();
+    startLine = data->getStart();
+    endLine = data->getEnd();
 
     mutexSemaphore.unlock();
 
     /*We skip the lines until reaching the ones that the thread got assigned*/
 
-    for(int i = 0; i < data->getstart() - 1; i++) getline(file, line);
+    for(int i = 1; i < startLine; i++) getline(file, line);
 
     /*Now we get the first assigned line and we start looking for the word we need. This will go on until we've checked every single line that the thread had assigned*/
 
-    for(int i = data->getstart(); i < data->getend(); i++){
+    for(int i = startLine; i <= endLine; i++){
+
+        /*We get the line and convert its character to lower case in order to do a better search*/
+
         getline(file, line);
-        size_t pos = line.find(data->getWordToFind());
+        lineLowerCase = line;
+        std::transform(lineLowerCase.begin(), lineLowerCase.end(), lineLowerCase.begin(), ::tolower);
+
+        /*We find the position of the word*/
+
+        size_t pos = lineLowerCase.find(wordToFind);
 
         while (pos != std::string::npos){
-            word = line.substr(pos, line.find(" ", pos)-pos);
+            word = lineLowerCase.substr(pos, lineLowerCase.find(" ", pos)-pos);
             
             /*We check that the word is not the last one of the line*/
 
-            if (pos+word.length() < line.length()){ 
+            if (pos+word.length() < lineLowerCase.length()){ 
                 
                 /*We check if it is the one before the last word, if so we'll look for the end line character \r instead of the white space character " " */
 
-                if(line.find(" ", pos+word.length()+1) != std::string::npos) nextWord = line.substr(line.find(" ", pos)+1, line.find(" ", pos+word.length()+1)-pos-word.length());
+                if(lineLowerCase.find(" ", pos+word.length()+1) != std::string::npos) nextWord = lineLowerCase.substr(lineLowerCase.find(" ", pos)+1, lineLowerCase.find(" ", pos+word.length()+1)-pos-word.length());
                 
-                else nextWord = line.substr(line.find(" ", pos)+1, line.find("\r", pos+word.length()+1)-pos-word.length());
+                else nextWord = lineLowerCase.substr(lineLowerCase.find(" ", pos)+1, lineLowerCase.find("\r", pos+word.length()+1)-pos-word.length());
 
             } else nextWord = "null";
 
-            size_t beginningOfPreviousWord = line.rfind(" ", pos-2);
+            size_t beginningOfPreviousWord = lineLowerCase.rfind(" ", pos-2);
 
             if (beginningOfPreviousWord != std::string::npos){
-                previousWord = line.substr(beginningOfPreviousWord+1, pos-beginningOfPreviousWord-1);
+                previousWord = lineLowerCase.substr(beginningOfPreviousWord+1, pos-beginningOfPreviousWord-1);
             }
 
             /*We save the results*/
@@ -103,7 +111,7 @@ void searchWord(std::string fileName, threadData *data){
 
             /*We keep loking for more appearances of the word in the line*/
 
-            pos = line.find(data->getWordToFind(), pos+1);
+            pos = lineLowerCase.find(wordToFind, pos+1);
         }
     }
 
@@ -118,7 +126,7 @@ void printSearchResult(std::vector<threadData> threadsDataResults){
         while (!element.isEmptyList()){
             struct SearchResult result;
             result = element.dequeueResult();
-            std::cout<<"[Hilo " << element.getid() << " inicio: " << element.getstart() << " - final: " << element.getend() << "] linea "<< result.line << " :: "<< "..." << result.previousWord << element.getWordToFind()<< " " << result.nextWord << "..."<<std::endl;
+            std::cout<<"[Hilo " << element.getId() << " inicio: " << element.getStart() << " - final: " << element.getEnd() << "] linea "<< result.line << " :: "<< "..." << result.previousWord << element.getWordToFind()<< " " << result.nextWord << "..."<<std::endl;
         }
         
     }
@@ -162,16 +170,16 @@ int main(int argc, char const *argv[]){
 
     /*We create the thread data objects where the results will be saved*/
 
-    for(int i = 0; i < numThreads; i++){
-        int upperLimit = (i+1)*linesPerThread;
-        int lowerLimit = upperLimit - linesPerThread;
+    for(int i = 1; i <= numThreads; i++){
+        int upperLimit = (i)*linesPerThread;
+        int lowerLimit = upperLimit - linesPerThread + 1;
 
-        if(i == 0){
+        if(i == 1){
             upperLimit = linesPerThread;
-            lowerLimit = 0;
+            lowerLimit = 1;
         } 
         
-        if(i == numThreads-1) upperLimit = numLines;
+        if(i == numThreads) upperLimit = numLines;
 
         threadsDataResults.push_back(threadData(i, lowerLimit, upperLimit, wordToFind));
     }
