@@ -17,14 +17,14 @@ class threadData {
         std::queue<SearchResult> resultsQueue;
     public:
         threadData(int id, int start, int end, std::string wordToFind);
-        int getid();
-        int getstart();
-        int getend();
+        int getId();
+        int getStart();
+        int getEnd();
         std::string getWordToFind();
         std::queue<SearchResult> getQueue();
-        void setid(int id);
-        void setstart(int start);
-        void setend(int end);
+        void setId(int id);
+        void setStart(int start);
+        void setEnd(int end);
         void queueResult(SearchResult w);
         SearchResult dequeueResult();
         bool isEmptyList();

@@ -6,22 +6,22 @@ threadData::threadData(int id, int start, int end, std::string wordToFind){
     this->start = start;
     this->wordToFind = wordToFind;
 }
-void threadData::setid(int id){
+void threadData::setId(int id){
     this->id = id;
 }
-void threadData::setend(int end){
+void threadData::setEnd(int end){
     this->end = end;
 }
-void threadData::setstart(int start){
+void threadData::setStart(int start){
     this->start = start;
 }
-int threadData::getid(){
+int threadData::getId(){
     return this->id;
 }
-int threadData::getend(){
+int threadData::getEnd(){
     return this->end;
 }
-int threadData::getstart(){
+int threadData::getStart(){
     return this->start;
 }
 std::string threadData::getWordToFind(){
