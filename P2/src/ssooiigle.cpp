@@ -118,7 +118,7 @@ void printSearchResult(std::vector<threadData> threadsDataResults){
         while (!element.isEmptyList()){
             struct SearchResult result;
             result = element.dequeueResult();
-            std::cout<<"[Hilo " << element.getid() << " inicio: " << element.getstart() << "- final: " << element.getend() << "] :: linea "<< result.line << "::"<< "..." << result.previousWord << element.getWordToFind()<< " " << result.nextWord << "..."<<std::endl;
+            std::cout<<"[Hilo " << element.getid() << " inicio: " << element.getstart() << " - final: " << element.getend() << "] linea "<< result.line << " :: "<< "..." << result.previousWord << element.getWordToFind()<< " " << result.nextWord << "..."<<std::endl;
         }
         
     }
@@ -163,11 +163,15 @@ int main(int argc, char const *argv[]){
     /*We create the thread data objects where the results will be saved*/
 
     for(int i = 0; i < numThreads; i++){
-        int lowerLimit = (i-1)*linesPerThread;
-        int upperLimit = i*linesPerThread;
+        int upperLimit = (i+1)*linesPerThread;
+        int lowerLimit = upperLimit - linesPerThread;
 
+        if(i == 0){
+            upperLimit = linesPerThread;
+            lowerLimit = 0;
+        } 
+        
         if(i == numThreads-1) upperLimit = numLines;
-        if(i == 0) lowerLimit = 0;
 
         threadsDataResults.push_back(threadData(i, lowerLimit, upperLimit, wordToFind));
     }
