@@ -24,6 +24,9 @@ int threadData::getend(){
 int threadData::getstart(){
     return this->start;
 }
+std::string threadData::getWordToFind(){
+    return this->wordToFind;
+}
 std::queue<SearchResult> threadData::getQueue(){
     return this->resultsQueue;
 }

@@ -20,6 +20,7 @@ class threadData {
         int getid();
         int getstart();
         int getend();
+        std::string getWordToFind();
         std::queue<SearchResult> getQueue();
         void setid(int id);
         void setstart(int start);
