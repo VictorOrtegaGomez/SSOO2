@@ -27,5 +27,6 @@ class threadData {
         void setend(int end);
         void queueResult(SearchResult w);
         SearchResult dequeueResult();
+        bool isEmptyList();
 };
 #endif

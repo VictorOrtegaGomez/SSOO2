@@ -38,3 +38,6 @@ SearchResult threadData::dequeueResult(){
     this->resultsQueue.pop();
     return w;
 }
+bool threadData::isEmptyList(){
+    return this->resultsQueue.empty();
+}
