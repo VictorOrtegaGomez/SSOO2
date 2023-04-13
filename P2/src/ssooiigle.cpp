@@ -9,7 +9,7 @@
 #include <fstream>
 
 int calculateTotalLines(std::string fileName);
-void searchWord(std::string fileName, threadData *data, std::string wordToFind);
+void searchWord(std::string fileName, threadData *data);
 void saveData(threadData *data, int line, std::string previousWord, std::string nextWord);
 
 std::shared_mutex bufferMutex;
