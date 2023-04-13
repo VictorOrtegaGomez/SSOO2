@@ -46,6 +46,22 @@ int calculateTotalLines(std::string fileName){
 
     return numLines;
 }
+void preprocesWord(std::string& previousWord, std::string& word, std::string& nextWord){
+
+        size_t pospre, posword, posnext;
+        pospre = previousWord.find("\r");
+        posword = word.find("\r");
+        posnext = nextWord.find("\r");
+        if (pospre != std::string::npos){
+            previousWord.erase(pospre, 1);
+        }
+        if (posword != std::string::npos){
+            word.erase(posword , 1);
+        }
+        if (posnext != std::string::npos){
+            nextWord.erase(posnext, 1);
+        }
+}
 
 void searchWord(std::string fileName, threadData *data){
 
@@ -94,21 +110,23 @@ void searchWord(std::string fileName, threadData *data){
                 
                 /*We check if it is the one before the last word, if so we'll look for the end line character \r instead of the white space character " " */
 
-                if(lineLowerCase.find(" ", pos+word.length()+1) != std::string::npos) nextWord = line.substr(lineLowerCase.find(" ", pos)+1, lineLowerCase.find(" ", pos+word.length()+1)-pos-word.length());
+                if(lineLowerCase.find(" ", pos+word.length()+1) != std::string::npos) nextWord = line.substr(lineLowerCase.find(" ", pos)+1, lineLowerCase.find(" ", pos+word.length()+1)-pos-word.length()-1);
                 
-                else nextWord = line.substr(lineLowerCase.find(" ", pos)+1, lineLowerCase.find("\r", pos+word.length()+1)-pos-word.length());
 
-            } else nextWord = "null";
+
+            } else nextWord = "";
 
             size_t beginningOfPreviousWord = lineLowerCase.rfind(" ", pos-2);
 
             if (beginningOfPreviousWord != std::string::npos){
                 previousWord = line.substr(beginningOfPreviousWord+1, pos-beginningOfPreviousWord-1);
             }
+            /* Here we preproces de data to eliminate carriage return*/
+            preprocesWord(previousWord, word, nextWord);
 
-            /*We save the results*/
-            
+            /* We save de data once it is preprocesed */
             saveData(data, i, word, previousWord, nextWord);
+            
 
             /*We keep loking for more appearances of the word in the line*/
 
@@ -127,7 +145,9 @@ void printSearchResult(std::vector<threadData> threadsDataResults){
         while (!element.isEmptyList()){
             struct SearchResult result;
             result = element.dequeueResult();
-            std::cout<<"[Hilo " << element.getId() << " inicio: " << element.getStart() << " - final: " << element.getEnd() << "] linea "<< result.line << " :: "<< "..." << result.previousWord << result.consideredWord << " " << result.nextWord << "..."<<std::endl;
+    
+            std::cout<<"[Hilo " << element.getId() << " inicio: " << element.getStart() << " - final: ";
+            std::cout << element.getEnd() << "] linea "<< result.line << " :: "<< "..." << result.previousWord << " " << result.consideredWord << " " << result.nextWord << "..."<<std::endl;
         }
         
     }
