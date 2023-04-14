@@ -22,7 +22,7 @@ In order to clean our project folder we can also make use of the **Makefile** fi
 
 > make clean
 
-`exec`, `obj`, `log.txt`, `estudiantes` will be completed deleted if they existed.
+`exec` and `obj` will be completed deleted if they existed.
 
 
 After every source file compilation is done, we can test our software with:
