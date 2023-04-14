@@ -49,13 +49,17 @@ int calculateTotalLines(std::string fileName){
     return numLines;
 }
 
+/*With this method we ensure that the word does not have return carriage*/
+
 void preprocessWord(std::string& previousWord, std::string& word, std::string& nextWord){
 
         size_t pospre, posword, posnext;
+        /*We look for the return carriage*/
         pospre = previousWord.find("\r");
         posword = word.find("\r");
         posnext = nextWord.find("\r");
         if (pospre != std::string::npos){
+            /*If we find a rturn carriage we eliminate it*/
             previousWord.erase(pospre, 1);
         }
         if (posword != std::string::npos){
