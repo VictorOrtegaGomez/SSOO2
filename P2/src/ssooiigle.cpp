@@ -10,6 +10,8 @@
 
 std::mutex mutexSemaphore;
 
+/*A SearchResult struct is created and queued in the threadData's queue results*/
+
 void saveData(threadData *data, int line, std::string word, std::string previousWord, std::string nextWord){
     struct SearchResult result;
 
@@ -46,6 +48,7 @@ int calculateTotalLines(std::string fileName){
 
     return numLines;
 }
+
 void preprocesWord(std::string& previousWord, std::string& word, std::string& nextWord){
 
         size_t pospre, posword, posnext;
@@ -62,6 +65,8 @@ void preprocesWord(std::string& previousWord, std::string& word, std::string& ne
             nextWord.erase(posnext, 1);
         }
 }
+
+/*Function that will search the word in the assigned lines*/
 
 void searchWord(std::string fileName, threadData *data){
 
@@ -135,8 +140,6 @@ void searchWord(std::string fileName, threadData *data){
     }
 
 }
-
-/*A SearchResult struct is created and queued in the threadData's queue results*/
 
 /*Funtion that will print the search results*/
 
