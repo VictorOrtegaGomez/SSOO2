@@ -49,7 +49,7 @@ int calculateTotalLines(std::string fileName){
     return numLines;
 }
 
-void preprocesWord(std::string& previousWord, std::string& word, std::string& nextWord){
+void preprocessWord(std::string& previousWord, std::string& word, std::string& nextWord){
 
         size_t pospre, posword, posnext;
         pospre = previousWord.find("\r");
@@ -127,7 +127,7 @@ void searchWord(std::string fileName, threadData *data){
                 previousWord = line.substr(beginningOfPreviousWord+1, pos-beginningOfPreviousWord-1);
             }
             /* Here we preproces de data to eliminate carriage return*/
-            preprocesWord(previousWord, word, nextWord);
+            preprocessWord(previousWord, word, nextWord);
 
             /* We save de data once it is preprocesed */
             saveData(data, i, word, previousWord, nextWord);
