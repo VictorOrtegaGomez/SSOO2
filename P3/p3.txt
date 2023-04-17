@@ -1,0 +1,27 @@
+- Cuando se ejecute el programa se tiene que emular todo solo.
+
+- Cada proceso emulará un usuario. el sistema generará usuarios por lotes, no
+todos a la vez para simular mejor el sistema real.
+
+- Clase cliente deberá tener la palabra que tiene que buscar, el id y su
+ categoría o perfil (gratuito, premium limitado, premium ilimitado).
+
+- La asignación del rol hacerla de forma aleatoria al crear el cliente y el saldo también generarlo de forma aleatoria.
+
+- Tendremos que tener un array de palabras y seleccionarlas de forma aleatoria.
+
+- El servidor de búsqueda no atiende a todos a la vez, deberemos tener una cola de peticiones (las peticiones serán una clase). El servidor deberá decidir cual atender. Deberá atenderlo en el ratio indicado. 
+
+- Tiene que haber una variable de configuración del sistema que indique cuantos servicios de búsqueda se pueden atender a la vez. si por ejemplo es 4, se irán resolviendo de 4 en 4. Este acceso se puede resolver con un semáforo contador.
+
+- La búsqueda de la palabra indicada se debe realizar sobre todos los libros. Se resuelve llamando a la misma función varias veces. El nivel de concurrencia máximo que se debe de alcanzar es varios usuarios buscando en varios archivos con varios hilos.
+
+- Tendremos que tener una variable de configuración del sistema que sea el número de palabras que la cuenta gratuita puede búscar.
+
+- Servicio que controle el saldo. Deberá tener otra cola de peticiones para atender el acceso. Las peticiones de pago serán otra clase. El servicio de pago debe saber que usuario y proceso le ha hecho la petición para mandar una confirmación.
+
+- En los premium limitado se debe acceder al saldo con exclusión mutua. Al finalizar la búsqueda de una palabra se unen todos los hilos de búsqueda, se mira si puede seguir búscando y si es así continuar con la siguiente palabra creando nuevos hilos.
+
+- Cuando las búsquedas hayan finalizado el resultado se debe de envíar al cliente.
+
+- El saldo debe recargarse y lo podemos hacer de forma aleatoria o con un número constante no importa.
