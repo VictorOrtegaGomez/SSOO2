@@ -34,8 +34,6 @@ void sendRequest(int id, int balance, int sleepTime){
     std::mutex mtx;
     mtx.lock();
 
-    srand(time(NULL));
-
     request req;
     req.id = id;
     req.balance = balance;
