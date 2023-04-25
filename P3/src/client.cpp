@@ -1,38 +1,38 @@
 #include "../include/client.hpp"
 
-client::client(){
+clientInfo::clientInfo(){
     this->id = NULL;
     this->balance = NULL;
     this->type = NULL;
     this->wordToSearch = "";
 }
-client::client(int id, int balance, int type, std::string wordToSearch){
+clientInfo::clientInfo(int id, int balance, int type, std::string wordToSearch){
     this->id = id;
     this->balance = balance;
     this->type = type;
     this->wordToSearch = wordToSearch;
 }
-int client::getId(){
+int clientInfo::getId(){
     return this->id;
 }
-int client::getBalance(){
+int clientInfo::getBalance(){
     return this->balance;
 }
-int client::getType(){
+int clientInfo::getType(){
     return this->type;
 }
-std::string client::getWordToSearch(){
+std::string clientInfo::getWordToSearch(){
     return this->wordToSearch;
 }
-void client::setId(int id){
+void clientInfo::setId(int id){
     this->id = id;
 }
-void client::setBalance(int balance){
+void clientInfo::setBalance(int balance){
     this->balance = balance;
 }
-void client::setType(int type){
+void clientInfo::setType(int type){
     this->type = type;
 }
-void client::setWordToSearch(std::string wordToSearch){
+void clientInfo::setWordToSearch(std::string wordToSearch){
     this->wordToSearch = wordToSearch;
 }

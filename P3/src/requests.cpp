@@ -1,23 +1,23 @@
 #include "../include/requests.hpp"
-
-request::request(client clientUser, int threadId, std::mutex *mutexSemaphore){
+#include <thread>
+request::request(clientInfo clientUser, std::thread::id threadId, std::mutex *mutexSemaphore){
     this->clientUser = clientUser;
     this->threadId = threadId;
     this->mutexSemaphore = mutexSemaphore;
 }
-client request::getClient(){
+clientInfo request::getClient(){
     return this->clientUser;
 }
-int request::getThreadId(){
+std::thread::id request::getThreadId(){
     return this->threadId;
 }
 std::mutex* request::getSemaphore(){
     return this->mutexSemaphore;
 }
-void request::setClient(client clientUser){
+void request::setClient(clientInfo clientUser){
     this->clientUser = clientUser;
 }
-void request::setThreadId(int threadId){
+void request::setThreadId(std::thread::id threadId){
     this->threadId = threadId;
 }
 void request::setSemaphore(std::mutex *mutexSemaphore){

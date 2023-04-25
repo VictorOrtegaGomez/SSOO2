@@ -2,7 +2,7 @@
 #define CLIENT.H
 #include<string>
 
-class client {
+class clientInfo {
     private:
         int id;
         int balance;
@@ -10,8 +10,8 @@ class client {
         std::string wordToSearch;
 
     public:
-        client();
-        client(int id, int balance, int type, std::string wordToSearch);
+        clientInfo();
+        clientInfo(int id, int balance, int type, std::string wordToSearch);
         int getId();
         int getBalance();
         int getType();

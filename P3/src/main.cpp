@@ -2,19 +2,26 @@
 #include <string>
 #include "../include/dataTypes.hpp"
 #include "../include/systemVariables.hpp"
+#include "../include/client.hpp"
 #include "../include/requests.hpp"
+#include <condition_variable>
 #include <thread>
 #include <functional>
 #include <mutex>
 #include <vector>
 #include <algorithm>
+#include <memory>
 #include <fstream>
 #include <queue>
 #include <chrono>
 
+
 std::mutex mutexSemaphore;
-std::queue <request> searchQueue;
+std::vector <std::string> glbWordList = SEARCH_WORDS;
+std::queue <std::shared_ptr<request>> searchQueue;
 std::queue <request> balanceQueue;
+std::mutex mtx_clients;
+std::condition_variable conditionClients;
 
 /*A SearchResult struct is created and queued in the threadData's queue results*/
 
@@ -169,8 +176,15 @@ void printSearchResult(std::vector<threadData> threadsDataResults){
 
 /*Piece of code that will be executed by the clients*/
 
-void client(){
-    
+void client(int id){
+    /* We create the cliente with random values */
+    srand(time(NULL));
+    clientInfo client_instance(id, rand() % MAX_CLIENT_BALANCE, rand() % NUM_CLIENT_TYPES, glbWordList[rand() % glbWordList.size()]);
+
+    /* We create the request */
+    std::mutex local_mtx;
+    request req(client_instance, std::this_thread::get_id(), &local_mtx);
+
 }
 
 int main(int argc, char const *argv[]){
@@ -192,7 +206,7 @@ int main(int argc, char const *argv[]){
 
         /*We create the client threads and then sleep*/
 
-        for(int i = 0; i < numClients; i++) clientThreads.push_back(std::thread(client));
+        for(int i = 0; i < numClients; i++) clientThreads.push_back(std::thread(client, i));
         
         std::this_thread::sleep_for(std::chrono::milliseconds(MAIN_SLEEP_TIME));
     }
