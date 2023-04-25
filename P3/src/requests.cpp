@@ -1,49 +1,25 @@
 #include "../include/requests.hpp"
 
-clientRequest::clientRequest(client clientUser, int threadId, std::mutex *mutexSemaphore){
+request::request(client clientUser, int threadId, std::mutex *mutexSemaphore){
     this->clientUser = clientUser;
     this->threadId = threadId;
     this->mutexSemaphore = mutexSemaphore;
 }
-client clientRequest::getClient(){
+client request::getClient(){
     return this->clientUser;
 }
-int clientRequest::getThreadId(){
+int request::getThreadId(){
     return this->threadId;
 }
-std::mutex* clientRequest::getSemaphore(){
+std::mutex* request::getSemaphore(){
     return this->mutexSemaphore;
 }
-void clientRequest::setClient(client clientUser){
+void request::setClient(client clientUser){
     this->clientUser = clientUser;
 }
-void clientRequest::setThreadId(int threadId){
+void request::setThreadId(int threadId){
     this->threadId = threadId;
 }
-void clientRequest::setSemaphore(std::mutex *mutexSemaphore){
-    this->mutexSemaphore = mutexSemaphore;
-}
-
-balanceRequest::balanceRequest(client clientUser, int threadId, std::mutex *mutexSemaphore){
-    this->clientUser = clientUser;
-    this->threadId = threadId;
-    this->mutexSemaphore = mutexSemaphore;
-}
-client balanceRequest::getClient(){
-    return this->clientUser;
-}
-int balanceRequest::getThreadId(){
-    return this->threadId;
-}
-std::mutex* balanceRequest::getSemaphore(){
-    return this->mutexSemaphore;
-}
-void balanceRequest::setClient(client clientUser){
-    this->clientUser = clientUser;
-}
-void balanceRequest::setThreadId(int threadId){
-    this->threadId = threadId;
-}
-void balanceRequest::setSemaphore(std::mutex *mutexSemaphore){
+void request::setSemaphore(std::mutex *mutexSemaphore){
     this->mutexSemaphore = mutexSemaphore;
 }
