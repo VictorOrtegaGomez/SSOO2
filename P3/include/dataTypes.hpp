@@ -8,6 +8,7 @@ struct SearchResult
     std::string previousWord;
     std::string nextWord;
     std::string consideredWord;
+    std::string fileName; //Name of the file where the word was found
 };
 class threadData {
     private:
