@@ -186,7 +186,7 @@ void client(int id){
 
     /* We create the request */
     std::mutex local_mtx;
-    request req(client_instance, std::this_thread::get_id(), &local_mtx);
+    request req(&client_instance, std::this_thread::get_id(), &local_mtx);
 
     /* We initilize the unique lock for the condition variable, we ensure that the queue has a space before pushing the request*/
     std::unique_lock<std::mutex> lock(empty);
@@ -200,7 +200,7 @@ void client(int id){
 
     /* We wait for the results */
     sharedReq->getSemaphore()->lock();
-    std::cout<< "Ejecucion de hilo: " << id << " Finalizada" << std::endl;
+    std::cout<< "Ejecucion de hilo: " << id << " Finalizada" << "saldo restante" << sharedReq->getClient()->getBalance()<<std::endl;
     
 }
 void RequestManager(int id){
@@ -226,6 +226,7 @@ void RequestManager(int id){
         std::cout << "Peticion procesada por hilo: " << id << "procedente del hilo: " << sharedRequest->getThreadId() << std::endl;
 
         /* We unlock the client who is wating for the results*/
+        sharedRequest->getClient()->setBalance(10);
         sharedRequest->getSemaphore()->unlock();
     }
     
