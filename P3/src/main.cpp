@@ -195,8 +195,8 @@ void client(int id){
     searchQueue.push(sharedReq);
 
     /* We advise the search system that a request is available */
-    conditionManager.notify_one();
     full.unlock();
+    conditionManager.notify_one();
 
     /* We wait for the results */
     sharedReq->getSemaphore()->lock();
@@ -208,16 +208,18 @@ void RequestManager(int id){
     {
         std::unique_lock<std::mutex> lock(full);
         conditionManager.wait(lock, []{return searchQueue.size() > 0; });
-        std::shared_ptr<request> sharedRequest = searchQueue.front();
-
+        mtxManager.lock();
+        std::shared_ptr<request> sharedRequest = std::move(searchQueue.front());
+        searchQueue.pop();
+        mtxManager.unlock();
+        empty.unlock();
         /* We have to create here the threads for the search (to implement)*/
+        std::cout << "procesando peticion  por hilo: " << id << "procedente del hilo: " << sharedRequest->getThreadId() << std::endl;
         std::this_thread::sleep_for(std::chrono::seconds(2));
         std::cout << "Peticion procesada por hilo: " << id << "procedente del hilo: " << sharedRequest->getThreadId() << std::endl;
 
         /* We unlock the client */
         sharedRequest->getSemaphore()->unlock();
-        searchQueue.pop();
-        empty.unlock();
         conditionClients.notify_one();
     }
     
