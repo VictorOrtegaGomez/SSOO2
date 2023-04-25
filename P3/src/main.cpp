@@ -23,6 +23,7 @@ std::queue <request> balanceQueue;
 std::mutex empty;
 std::mutex full;
 std::condition_variable conditionClients;
+std::condition_variable conditionManager;
 
 /*A SearchResult struct is created and queued in the threadData's queue results*/
 
@@ -193,15 +194,32 @@ void client(int id){
     searchQueue.push(sharedReq);
 
     /* We advise the search system that a request is available */
+    conditionManager.notify_all();
     full.unlock();
-    lock.unlock();
-    conditionClients.notify_one();
 
     /* We wait for the results */
     sharedReq->getSemaphore()->lock();
     std::cout<< "Ejecucion de hilo: " << id << " Finalizada" << std::endl;
     
+}
+void RequestManager(int id){
+    while (1)
+    {
+        std::unique_lock<std::mutex> lock(full);
+        conditionManager.wait(lock, []{return searchQueue.size() > 0; });
+        std::shared_ptr<request> sharedRequest = searchQueue.front();
 
+        /* We have to create here the threads for the search (to implement)*/
+        std::this_thread::sleep_for(std::chrono::seconds(2));
+        std::cout << "Peticion procesada por hilo: " << id << "procedente del hilo: " << sharedRequest->getThreadId() << std::endl;
+
+        /* We unlock the client */
+        sharedRequest->getSemaphore()->unlock();
+        searchQueue.pop();
+        empty.unlock();
+        conditionClients.notify_all();
+    }
+    
 }
 
 int main(int argc, char const *argv[]){
@@ -210,7 +228,7 @@ int main(int argc, char const *argv[]){
 
     /*We create the threads that will be doing the search they get from the searchQueue*/
 
-    //for(int i = 0; i < CONCURRENT_SEARCH_REQUESTS; i++) searchThreads.push_back(std::thread(searchWord));
+    for(int i = 0; i <= CONCURRENT_SEARCH_REQUESTS; i++) searchThreads.push_back(std::thread(RequestManager, i));
 
     /*We'll be creating client threads the whole execution time and we won't wait for them to finish*/
 
