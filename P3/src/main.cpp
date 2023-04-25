@@ -20,7 +20,8 @@ std::mutex mutexSemaphore;
 std::vector <std::string> glbWordList = SEARCH_WORDS;
 std::queue <std::shared_ptr<request>> searchQueue;
 std::queue <request> balanceQueue;
-std::mutex mtx_clients;
+std::mutex empty;
+std::mutex full;
 std::condition_variable conditionClients;
 
 /*A SearchResult struct is created and queued in the threadData's queue results*/
@@ -185,6 +186,20 @@ void client(int id){
     std::mutex local_mtx;
     request req(client_instance, std::this_thread::get_id(), &local_mtx);
 
+    /* We initilize the unique lock for the condition variable*/
+    std::unique_lock<std::mutex> lock(empty);
+    std::shared_ptr<request> sharedReq = std::make_shared<request>(req);
+    conditionClients.wait(lock, []{return searchQueue.size() < SEARCH_QUEUE_SIZE});
+    searchQueue.push(sharedReq);
+
+    /* We advise the search system that a request is available */
+    full.unlock();
+    lock.unlock();
+    conditionClients.notify_one();
+
+    /* We wait for the results */
+    sharedReq->getSemaphore()->lock();
+    std::cout<< "Ejecucion de hilo: " << id << " Finalizada" << std::endl;
     
 
 }
