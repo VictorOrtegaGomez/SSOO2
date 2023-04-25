@@ -8,10 +8,13 @@ CFLAGS := -I$(DIRHEA) -c
 LDLIBS := -pthread -std=c++11
 CC := g++
 
-all : dirs requests client main 
+all : dirs threadData requests client main 
 
 dirs:
 	mkdir -p $(DIROBJ) $(DIREXE) $(DIRHEA) $(DIRSRC)
+
+threadData: $(DIROBJ)threadData.o
+	$(CC) -o $(DIREXE)$@ $^ $(LDLIBS) -Xlinker $(DIRHEA)
 
 requests: $(DIROBJ)requests.o
 	$(CC) -o $(DIREXE)$@ $^ $(LDLIBS) -Xlinker $(DIRHEA)
@@ -20,7 +23,7 @@ client: $(DIROBJ)client.o
 	$(CC) -o $(DIREXE)$@ $^ $(LDLIBS) -Xlinker $(DIRHEA)	
 
 main: $(DIROBJ)main.o 
-	$(CC) -o $(DIREXE)$@ $^ $(LDLIBS) $(DIRSRC)client.cpp $(DIRSRC)requests.cpp 
+	$(CC) -o $(DIREXE)$@ $^ $(LDLIBS) $(DIRSRC)client.cpp $(DIRSRC)requests.cpp $(DIRSRC)threadData.cpp
 
 test: 
 	./$(DIREXE)main
