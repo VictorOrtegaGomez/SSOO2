@@ -3,6 +3,7 @@
 request::request(clientInfo clientUser, std::thread::id threadId, std::mutex *mutexSemaphore){
     this->clientUser = clientUser;
     this->threadId = threadId;
+    mutexSemaphore->lock();
     this->mutexSemaphore = mutexSemaphore;
 }
 clientInfo request::getClient(){

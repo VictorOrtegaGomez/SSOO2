@@ -185,6 +185,8 @@ void client(int id){
     std::mutex local_mtx;
     request req(client_instance, std::this_thread::get_id(), &local_mtx);
 
+    
+
 }
 
 int main(int argc, char const *argv[]){
