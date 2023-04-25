@@ -22,6 +22,7 @@ std::queue <std::shared_ptr<request>> searchQueue;
 std::queue <request> balanceQueue;
 std::mutex empty;
 std::mutex full;
+std::mutex mtxManager;
 std::condition_variable conditionClients;
 std::condition_variable conditionManager;
 
@@ -194,7 +195,7 @@ void client(int id){
     searchQueue.push(sharedReq);
 
     /* We advise the search system that a request is available */
-    conditionManager.notify_all();
+    conditionManager.notify_one();
     full.unlock();
 
     /* We wait for the results */
@@ -217,7 +218,7 @@ void RequestManager(int id){
         sharedRequest->getSemaphore()->unlock();
         searchQueue.pop();
         empty.unlock();
-        conditionClients.notify_all();
+        conditionClients.notify_one();
     }
     
 }
