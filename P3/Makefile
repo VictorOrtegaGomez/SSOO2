@@ -8,7 +8,7 @@ CFLAGS := -I$(DIRHEA) -c
 LDLIBS := -pthread -std=c++11
 CC := g++
 
-all : dirs threadData requests client main 
+all : dirs main 
 
 dirs:
 	mkdir -p $(DIROBJ) $(DIREXE) $(DIRHEA) $(DIRSRC)

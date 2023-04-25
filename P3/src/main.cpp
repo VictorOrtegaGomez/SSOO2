@@ -78,7 +78,7 @@ void preprocessWord(std::string& previousWord, std::string& word, std::string& n
 
 /*Function that will search the word in the assigned lines*/
 
-void searchWord(){
+void searchWord(std::string fileName, threadData* data){
 
     std::ifstream file(fileName);
     std::string line, lineLowerCase;
@@ -170,7 +170,7 @@ void printSearchResult(std::vector<threadData> threadsDataResults){
 /*Piece of code that will be executed by the clients*/
 
 void client(){
-
+    
 }
 
 int main(int argc, char const *argv[]){
@@ -179,7 +179,7 @@ int main(int argc, char const *argv[]){
 
     /*We create the threads that will be doing the search they get from the searchQueue*/
 
-    for(int i = 0; i < CONCURRENT_SEARCH_REQUESTS; i++) searchThreads.push_back(std::thread(searchWord));
+    //for(int i = 0; i < CONCURRENT_SEARCH_REQUESTS; i++) searchThreads.push_back(std::thread(searchWord));
 
     /*We'll be creating client threads the whole execution time and we won't wait for them to finish*/
 
