@@ -1,31 +1,38 @@
 #ifndef REQUESTS.H
 #define REQUESTS.H
 #include "../include/client.hpp"
+#include "mutex"
 
 class clientRequest {
     private:
         client clientUser;
-        pid_t processPid;
+        int threadId;
+        std::mutex *mutexSemaphore;
 
     public:
-        clientRequest(client clientUser, pid_t processPid);
+        clientRequest(client clientUser, int threadId, std::mutex *mutexSemaphore);
         client getClient();
-        pid_t getProcessPid();
+        int getThreadId();
+        std::mutex* getSemaphore(); 
         void setClient(client clientUser);
-        void setProcessPid(pid_t processPid);
+        void setThreadId(int threadId);
+        void setSemaphore(std::mutex *mutexSemaphore);
 };
 
 class balanceRequest {
     private:
         client clientUser;
-        pid_t processPid;
+        int threadId;
+        std::mutex *mutexSemaphore;
 
     public:
-        balanceRequest(client clientUser, pid_t processPid);
+        balanceRequest(client clientUser, int threadId, std::mutex *mutexSemaphore);
         client getClient();
-        pid_t getProcessPid();
+        int getThreadId();
+        std::mutex* getSemaphore(); 
         void setClient(client clientUser);
-        void setProcessPid(pid_t processPid);
+        void setThreadId(int threadId);
+        void setSemaphore(std::mutex *mutexSemaphore);
 };
 
 #endif
