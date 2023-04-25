@@ -25,3 +25,14 @@ todos a la vez para simular mejor el sistema real.
 - Cuando las búsquedas hayan finalizado el resultado se debe de envíar al cliente.
 
 - El saldo debe recargarse y lo podemos hacer de forma aleatoria o con un número constante no importa.
+
+- Se puede hacer un log
+
+- Escribir los resultados en fichero en vez de mostrar por pantalla
+
+- En c++ se puede imprimir por pantalla con colores, asociar los colores a los tipo de mensajes
+
+- Si un cliente se queda sin saldo el buscador deberia bloquearse. La sincronización real debería ser que el buscador notifica al cliente y el cliente hace el pago, este avisa al sistema de pago y una vez hecho avisa al cliente y luego el cliente al buscador otra vez.
+Nos ha dicho que esto nos lo simplifica si hacemos que el buscador sea el que avise al sistema de pagos.
+
+- Crear todos los hilos buscadores y cuando cojan la peticion haran la busqueda
