@@ -1,5 +1,5 @@
 #include "../include/requests.hpp"
-#include <thread>
+
 request::request(clientInfo clientUser, std::thread::id threadId, std::mutex *mutexSemaphore){
     this->clientUser = clientUser;
     this->threadId = threadId;
