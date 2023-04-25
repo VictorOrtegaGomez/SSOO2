@@ -188,7 +188,7 @@ void client(int id){
     std::mutex local_mtx;
     request req(client_instance, std::this_thread::get_id(), &local_mtx);
 
-    /* We initilize the unique lock for the condition variable*/
+    /* We initilize the unique lock for the condition variable, we ensure that the queue has a space before pushing the request*/
     std::unique_lock<std::mutex> lock(empty);
     std::shared_ptr<request> sharedReq = std::make_shared<request>(req);
     conditionClients.wait(lock, []{return searchQueue.size() < SEARCH_QUEUE_SIZE});
@@ -206,21 +206,27 @@ void client(int id){
 void RequestManager(int id){
     while (1)
     {
+        /* We ensure that the queue has one or more elements*/
         std::unique_lock<std::mutex> lock(full);
         conditionManager.wait(lock, []{return searchQueue.size() > 0; });
+
+        /* We ensure the mutual exlusion while accessing the queue*/
         mtxManager.lock();
         std::shared_ptr<request> sharedRequest = std::move(searchQueue.front());
         searchQueue.pop();
         mtxManager.unlock();
+
+        /* We advertise the client that the queue has a free space */
         empty.unlock();
+        conditionClients.notify_one();
+
         /* We have to create here the threads for the search (to implement)*/
         std::cout << "procesando peticion  por hilo: " << id << "procedente del hilo: " << sharedRequest->getThreadId() << std::endl;
-        std::this_thread::sleep_for(std::chrono::seconds(2));
+        std::this_thread::sleep_for(std::chrono::seconds(2)); // Aquñi creariamos los hilos de busqueda necesarios.
         std::cout << "Peticion procesada por hilo: " << id << "procedente del hilo: " << sharedRequest->getThreadId() << std::endl;
 
-        /* We unlock the client */
+        /* We unlock the client who is wating for the results*/
         sharedRequest->getSemaphore()->unlock();
-        conditionClients.notify_one();
     }
     
 }
