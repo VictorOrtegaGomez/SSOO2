@@ -5,7 +5,7 @@ DIRSRC := src/
 DIRTXT := textos/
 
 CFLAGS := -I$(DIRHEA) -c
-LDLIBS := -pthread -std=c++11
+LDLIBS := -pthread -std=c++17
 CC := g++
 
 all : dirs main 
@@ -20,10 +20,10 @@ requests: $(DIROBJ)requests.o
 	$(CC) -o $(DIREXE)$@ $^ $(LDLIBS) -Xlinker $(DIRHEA)
 
 client: $(DIROBJ)client.o
-	$(CC) -o $(DIREXE)$@ $^ $(LDLIBS) -Xlinker $(DIRHEA)	
+	$(CC) -o $(DIREXE)$@ $^ $(LDLIBS) -Xlinker $(DIRHEA)		
 
 main: $(DIROBJ)main.o 
-	$(CC) -o $(DIREXE)$@ $^ $(LDLIBS) $(DIRSRC)client.cpp $(DIRSRC)requests.cpp $(DIRSRC)threadData.cpp
+	$(CC) -o $(DIREXE)$@ $^ $(LDLIBS) $(DIRSRC)client.cpp $(DIRSRC)requests.cpp $(DIRSRC)threadData.cpp 
 
 test: 
 	./$(DIREXE)main
