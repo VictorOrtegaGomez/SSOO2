@@ -19,7 +19,8 @@
 std::mutex mutexSemaphore;
 std::vector <std::string> glbWordList = SEARCH_WORDS;
 std::vector <std::string> glbFileList = FILES_NAMES;
-std::queue <std::shared_ptr<request>> searchQueue;
+std::vector <std::string> glbClientList = CLIENT_TYPES;
+std::vector <std::shared_ptr<request>> searchQueue;
 std::queue <std::shared_ptr<request>> balanceQueue;
 std::mutex empty;
 std::mutex full;
@@ -224,7 +225,7 @@ void client(int id){
     std::unique_lock<std::mutex> lock(empty);
     std::shared_ptr<request> sharedReq = std::make_shared<request>(req);
     cvClients.wait(lock, []{return searchQueue.size() < SEARCH_QUEUE_SIZE});
-    searchQueue.push(sharedReq);
+    searchQueue.push_back(sharedReq);
 
     /* We advise the search system that a request is available */
     full.unlock();
@@ -251,9 +252,41 @@ void createFileThreads(std::vector<threadData> *threadsDataResults, std::vector<
     }
 }
 
+/*Function that will select the type of client in a 80/20 ratio*/
+
+int selectClientType(){
+
+    srand(time(NULL));
+    double clientType = rand() % 100;
+
+    if(clientType < 80) return 0;
+    else return 1;
+}
+
+/*Function that will return the position in the vector of the selected request*/
+
+int selectSearchRequest(){
+    
+    srand(time(NULL));
+    int type = selectClientType();
+    bool premium;
+
+    if(type == 0) premium = true;
+    else premium = false;
+    
+    for(int i = 0; i < searchQueue.size(); i++){
+        if(premium && (searchQueue[i]->getClient()->getType() == 0 || searchQueue[i]->getClient()->getType() == 1)) return i;
+        else if(!premium && searchQueue[i]->getClient()->getType() == 1) return i;
+    }
+
+}
+
+/*Function that will manage the search requests*/
+
 void requestManager(int id){
     std::vector<std::thread>fileThreads;
     std::vector<threadData>threadsDataResults;
+    int selectedRequestPosition;
 
     while (1)
     {
@@ -263,8 +296,9 @@ void requestManager(int id){
 
         /* We ensure the mutual exlusion while accessing the queue*/
         mtxSearchQueue.lock();
-        std::shared_ptr<request> sharedRequest = std::move(searchQueue.front());
-        searchQueue.pop();
+        selectedRequestPosition = selectSearchRequest();
+        std::shared_ptr<request> sharedRequest = std::move(searchQueue[selectedRequestPosition]);
+        searchQueue.erase(searchQueue.begin() + selectedRequestPosition);
         mtxSearchQueue.unlock();
 
         /* We advertise the client that the queue has a free space */
@@ -283,6 +317,8 @@ void requestManager(int id){
     }
     
 }
+
+/*Funtion that will be launched by the balance service. It will manage balance requests*/
 
 void balanceManager(){
     std::mutex mtx;
