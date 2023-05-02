@@ -279,6 +279,7 @@ int selectSearchRequest(){
         else if(!premium && searchQueue[i]->getClient()->getType() == 1) return i;
     }
 
+    return -1;
 }
 
 /*Function that will manage the search requests*/
@@ -296,9 +297,14 @@ void requestManager(int id){
 
         /* We ensure the mutual exlusion while accessing the queue*/
         mtxSearchQueue.lock();
-        selectedRequestPosition = selectSearchRequest();
-        std::shared_ptr<request> sharedRequest = std::move(searchQueue[selectedRequestPosition]);
-        searchQueue.erase(searchQueue.begin() + selectedRequestPosition);
+
+        if((selectedRequestPosition = selectSearchRequest()) == -1){
+            std::cout << "[" << id << "]" << " No search requests available" << std::endl;
+        }else{
+            std::shared_ptr<request> sharedRequest = std::move(searchQueue[selectedRequestPosition]);
+            searchQueue.erase(searchQueue.begin() + selectedRequestPosition);
+        }
+        
         mtxSearchQueue.unlock();
 
         /* We advertise the client that the queue has a free space */
