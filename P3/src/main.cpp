@@ -93,7 +93,7 @@ void preprocessWord(std::string& previousWord, std::string& word, std::string& n
 
 /*Function that will search the word in the assigned lines*/
 
-void searchWord(std::string fileName, threadData* data, clientInfo client){
+void searchWord(std::string fileName, threadData* data, clientInfo* client){
 
     std::ifstream file(fileName);
     std::string line, lineLowerCase;
@@ -201,6 +201,7 @@ void calculateLimits(int *upperLimit, int *lowerLimit, int numThreads, int numLi
 /*Function tha will create the thread data objects where the results will be saved*/
 
 void createThreadData(std::vector<threadData> *threadsDataResults, int numThreads, int numLines, std::string wordToFind){
+    
     int upperLimit, lowerLimit;
 
     for(int i = 1; i <= numThreads; i++){
@@ -240,13 +241,14 @@ void client(int id){
 /*Funtion that will create the threads needed for every file*/
 
 void createFileThreads(std::vector<threadData> *threadsDataResults, std::vector<std::thread> *fileThreads, std::shared_ptr<request> sharedRequest){
+    
     for(int i = 0; i < NUM_OF_FILES; i++){
 
-        for(int i = 0; i < NUM_OF_THREADS_IN_FILE; i++){
+        for(int z = 0; z < NUM_OF_THREADS_IN_FILE; z++){
 
             int numLines = calculateTotalLines(glbFileList[i]);
             createThreadData(threadsDataResults, NUM_OF_THREADS_IN_FILE, numLines, sharedRequest->getClient()->getWordToSearch());
-            fileThreads->push_back(std::thread(searchWord, glbFileList[i], threadsDataResults[i], sharedRequest->getClient()));
+            //fileThreads->push_back(std::thread(searchWord, glbFileList[i], &threadsDataResults[i], sharedRequest->getClient()));
 
         }
     }
@@ -297,11 +299,12 @@ void requestManager(int id){
 
         /* We ensure the mutual exlusion while accessing the queue*/
         mtxSearchQueue.lock();
+        std::shared_ptr<request> sharedRequest;
 
         if((selectedRequestPosition = selectSearchRequest()) == -1){
             std::cout << "[" << id << "]" << " No search requests available" << std::endl;
         }else{
-            std::shared_ptr<request> sharedRequest = std::move(searchQueue[selectedRequestPosition]);
+            sharedRequest = std::move(searchQueue[selectedRequestPosition]);
             searchQueue.erase(searchQueue.begin() + selectedRequestPosition);
         }
         
