@@ -244,11 +244,11 @@ void createFileThreads(std::vector<threadData> *threadsDataResults, std::vector<
     
     for(int i = 0; i < NUM_OF_FILES; i++){
 
-        for(int z = 0; z < NUM_OF_THREADS_IN_FILE; z++){
+        for(int i = 0; i < NUM_OF_THREADS_IN_FILE; i++){
 
             int numLines = calculateTotalLines(glbFileList[i]);
             createThreadData(threadsDataResults, NUM_OF_THREADS_IN_FILE, numLines, sharedRequest->getClient()->getWordToSearch());
-            //fileThreads->push_back(std::thread(searchWord, glbFileList[i], &threadsDataResults[i], sharedRequest->getClient()));
+            fileThreads->push_back(std::thread(searchWord, glbFileList[i], &threadsDataResults->at(i), sharedRequest->getClient()));
 
         }
     }
@@ -302,27 +302,31 @@ void requestManager(int id){
         std::shared_ptr<request> sharedRequest;
 
         if((selectedRequestPosition = selectSearchRequest()) == -1){
-            std::cout << "[" << id << "]" << " No search requests available" << std::endl;
+            //std::cout << "[" << id << "]" << " No search requests available" << std::endl;
+            mtxSearchQueue.unlock();
+
+            /* We advertise the client that the queue has a free space */
+            empty.unlock();
+            cvClients.notify_one();
         }else{
             sharedRequest = std::move(searchQueue[selectedRequestPosition]);
             searchQueue.erase(searchQueue.begin() + selectedRequestPosition);
+            mtxSearchQueue.unlock();
+
+            /* We advertise the client that the queue has a free space */
+            empty.unlock();
+            cvClients.notify_one();
+            /* We have to create here the threads for the search*/
+            std::cout << "[" << id << "]" << " Processing search request from client: " << sharedRequest->getClient()->getId() << std::endl;
+
+            createFileThreads(&threadsDataResults, &fileThreads, sharedRequest);
+
+            std::cout << "[" << id << "]" << " Search request processing finished from client: " << sharedRequest->getClient()->getId() << std::endl;
+
+            /* We unlock the client who is wating for the results*/
+            sharedRequest->getSemaphore()->unlock();
         }
         
-        mtxSearchQueue.unlock();
-
-        /* We advertise the client that the queue has a free space */
-        empty.unlock();
-        cvClients.notify_one();
-
-        /* We have to create here the threads for the search*/
-        std::cout << "[" << id << "]" << " Processing search request from client: " << sharedRequest->getClient()->getId() << std::endl;
-
-        createFileThreads(&threadsDataResults, &fileThreads, sharedRequest);
-
-        std::cout << "[" << id << "]" << " Search request processing finished from client: " << sharedRequest->getClient()->getId() << std::endl;
-
-        /* We unlock the client who is wating for the results*/
-        sharedRequest->getSemaphore()->unlock();
     }
     
 }
