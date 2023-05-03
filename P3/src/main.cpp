@@ -204,7 +204,7 @@ void createThreadData(std::vector<threadData> *threadsDataResults, int numThread
     int upperLimit, lowerLimit;
 
     for(int i = 1; i <= numThreads; i++){
-        calculateLimits(&upperLimit, &lowerLimit, numThreads, numLines, i);
+        //calculateLimits(&upperLimit, &lowerLimit, numThreads, numLines, i);
         threadsDataResults->push_back(threadData(i, 0, numLines, wordToFind));
     }
 }
