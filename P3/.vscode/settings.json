@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.slice": "bat",
+        "thread": "cpp",
+        "chrono": "cpp"
+    }
+}
