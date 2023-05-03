@@ -1,6 +1,7 @@
 #ifndef CLIENT.H
 #define CLIENT.H
 #include<string>
+#include "dataTypes.hpp"
 
 class clientInfo {
     private:
@@ -8,10 +9,13 @@ class clientInfo {
         int balance;
         int type;
         std::string wordToSearch;
+        std::vector<threadData> result;
 
     public:
         clientInfo();
         clientInfo(int id, int balance, int type, std::string wordToSearch);
+        void setResult(std::vector<threadData> result);
+        std::vector<threadData> getResult();
         int getId();
         int getBalance();
         int getType();

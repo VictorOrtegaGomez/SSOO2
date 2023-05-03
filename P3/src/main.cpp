@@ -110,7 +110,6 @@ void searchWord(std::string fileName, threadData* data, clientInfo* client){
     startLine = data->getStart();
     endLine = data->getEnd();
 
-
     /*We skip the lines until reaching the ones that the thread got assigned*/
 
     for(int i = 1; i < startLine; i++) getline(file, line);
@@ -167,6 +166,7 @@ void searchWord(std::string fileName, threadData* data, clientInfo* client){
 /*Funtion that will print the search results*/
 
 void printSearchResult(std::vector<threadData> threadsDataResults){
+    std::cout << "printing results" <<std::endl;
     for (threadData& element : threadsDataResults){
         while (!element.isEmptyList()){
             struct SearchResult result;
@@ -185,8 +185,8 @@ void printSearchResult(std::vector<threadData> threadsDataResults){
 void calculateLimits(int *upperLimit, int *lowerLimit, int numThreads, int numLines, int i){
     int linesPerThread = numLines/numThreads;
 
-    *upperLimit = (i)*linesPerThread;
-    *lowerLimit = *upperLimit - linesPerThread + 1;
+    *lowerLimit = (i)*linesPerThread;
+    *upperLimit = *upperLimit - linesPerThread + 1;
 
     if(i == 1){
         *upperLimit = linesPerThread;
@@ -194,6 +194,7 @@ void calculateLimits(int *upperLimit, int *lowerLimit, int numThreads, int numLi
     } 
     
     if(i == numThreads) *upperLimit = numLines;
+    std::cout << lowerLimit << " " << *upperLimit <<std::endl;
 }
 
 /*Function tha will create the thread data objects where the results will be saved*/
@@ -204,7 +205,7 @@ void createThreadData(std::vector<threadData> *threadsDataResults, int numThread
 
     for(int i = 1; i <= numThreads; i++){
         calculateLimits(&upperLimit, &lowerLimit, numThreads, numLines, i);
-        threadsDataResults->push_back(threadData(i, lowerLimit, upperLimit, wordToFind));
+        threadsDataResults->push_back(threadData(i, 0, numLines, wordToFind));
     }
 }
 
@@ -226,7 +227,6 @@ void client(int id){
     std::shared_ptr<request> sharedReq = std::make_shared<request>(req);
     cvClients.wait(lock, []{return searchQueue.size() < SEARCH_QUEUE_SIZE});
     searchQueue.push_back(sharedReq);
-
     /* We advise the search system that a request is available */
     full.unlock();
     cvRequestsManager.notify_one();
@@ -234,6 +234,7 @@ void client(int id){
     /* We wait for the results */
     sharedReq->getSemaphore()->lock();
     std::cout<< "Ejecucion de hilo: " << id << " Finalizada" << "saldo restante" << sharedReq->getClient()->getBalance()<<std::endl;
+    printSearchResult(client_instance.getResult());
     
 }
 
@@ -241,15 +242,15 @@ void client(int id){
 
 void createFileThreads(std::vector<threadData> *threadsDataResults, std::vector<std::thread> *fileThreads, std::shared_ptr<request> sharedRequest){
     
-    for(int i = 0; i < NUM_OF_FILES-1; i++){
+    for(int i = 0; i < NUM_OF_FILES; i++){
 
-        //for(int z = 1; z < NUM_OF_THREADS_IN_FILE; z++){
+        for(int i = 0; i < NUM_OF_THREADS_IN_FILE; i++){
 
             int numLines = calculateTotalLines(glbFileList[i]);
             createThreadData(threadsDataResults, NUM_OF_FILES, numLines, sharedRequest->getClient()->getWordToSearch());
             fileThreads->push_back(std::thread(searchWord, glbFileList[i], &threadsDataResults->at(i), sharedRequest->getClient()));
 
-        //}
+        }
     }
 }
 
@@ -317,14 +318,17 @@ void requestManager(int id){
             cvClients.notify_one();
             /* We have to create here the threads for the search*/
             std::cout << "[" << id << "]" << " Processing search request from client: " << sharedRequest->getClient()->getId() << std::endl;
-
             createFileThreads(&threadsDataResults, &fileThreads, sharedRequest);
+            std::cout << fileThreads.size() << std::endl;
             std::for_each(fileThreads.begin(), fileThreads.end(), std::mem_fn(&std::thread::join));
 
             std::cout << "[" << id << "]" << " Search request processing finished from client: " << sharedRequest->getClient()->getId() << std::endl;
 
             /* We unlock the client who is wating for the results*/
+            sharedRequest->getClient()->setResult(threadsDataResults);
             sharedRequest->getSemaphore()->unlock();
+            fileThreads.clear();
+            threadsDataResults.clear();
             std::this_thread::sleep_for(std::chrono::seconds(2));
         }
         
@@ -389,7 +393,7 @@ int main(int argc, char const *argv[]){
 
         /*We create the client threads and then sleep*/
 
-        for(int i = 0; i < numClients; i++) clientThreads.push_back(std::thread(client, i));
+        for(int i = 0; i < 1; i++) clientThreads.push_back(std::thread(client, i));
         
         std::this_thread::sleep_for(std::chrono::milliseconds(MAIN_SLEEP_TIME));
     }

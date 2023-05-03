@@ -24,6 +24,9 @@ int clientInfo::getType(){
 std::string clientInfo::getWordToSearch(){
     return this->wordToSearch;
 }
+std::vector<threadData> clientInfo::getResult(){
+    return this->result;
+}
 void clientInfo::setId(int id){
     this->id = id;
 }
@@ -35,4 +38,7 @@ void clientInfo::setType(int type){
 }
 void clientInfo::setWordToSearch(std::string wordToSearch){
     this->wordToSearch = wordToSearch;
+}
+void clientInfo::setResult(std::vector<threadData> result){
+    this->result = result;
 }
