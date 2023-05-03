@@ -199,7 +199,7 @@ void calculateLimits(int *upperLimit, int *lowerLimit, int numThreads, int numLi
 
 /*Function tha will create the thread data objects where the results will be saved*/
 
-void createThreadData(std::vector<threadData> *threadsDataResults, int numThreads, int numLines, std::string wordToFind){
+/*void createThreadData(std::vector<threadData> *threadsDataResults, int numThreads, int numLines, std::string wordToFind){
     
     int upperLimit, lowerLimit;
 
@@ -207,7 +207,7 @@ void createThreadData(std::vector<threadData> *threadsDataResults, int numThread
         //calculateLimits(&upperLimit, &lowerLimit, numThreads, numLines, i);
         threadsDataResults->push_back(threadData(i, 0, numLines, wordToFind));
     }
-}
+}*/
 
 /*Piece of code that will be executed by the clients*/
 
@@ -241,17 +241,21 @@ void client(int id){
 /*Funtion that will create the threads needed for every file*/
 
 void createFileThreads(std::vector<threadData> *threadsDataResults, std::vector<std::thread> *fileThreads, std::shared_ptr<request> sharedRequest){
-    
+    int counter_threadID = 0;
     for(int i = 0; i < NUM_OF_FILES; i++){
-
-        for(int i = 0; i < NUM_OF_THREADS_IN_FILE; i++){
-
-            int numLines = calculateTotalLines(glbFileList[i]);
-            createThreadData(threadsDataResults, NUM_OF_FILES, numLines, sharedRequest->getClient()->getWordToSearch());
-            fileThreads->push_back(std::thread(searchWord, glbFileList[i], &threadsDataResults->at(i), sharedRequest->getClient()));
-
+        int numLines = calculateTotalLines(glbFileList[i]);
+        for(int z = 0; z < NUM_OF_THREADS_IN_FILE; z++){
+            std::cout << counter_threadID << std::endl;
+            threadsDataResults->push_back(threadData(counter_threadID, 0, numLines, sharedRequest->getClient()->getWordToSearch()));
+            counter_threadID++;
         }
     }
+    std::cout << threadsDataResults->size() << std::endl;
+    counter_threadID = 0;
+    for (int i = 0; i < NUM_OF_FILES; i++) for (int z = 0; z < NUM_OF_THREADS_IN_FILE; z++, counter_threadID++)
+     fileThreads->push_back(std::thread(searchWord, glbFileList[i], &threadsDataResults->at(counter_threadID), sharedRequest->getClient()));
+    std::cout << fileThreads->size()<< std::endl;
+    std::for_each(fileThreads->begin(), fileThreads->end(), std::mem_fn(&std::thread::join));
 }
 
 /*Function that will select the type of client in a 80/20 ratio*/
@@ -319,9 +323,6 @@ void requestManager(int id){
             /* We have to create here the threads for the search*/
             std::cout << "[" << id << "]" << " Processing search request from client: " << sharedRequest->getClient()->getId() << std::endl;
             createFileThreads(&threadsDataResults, &fileThreads, sharedRequest);
-            std::cout << fileThreads.size() << std::endl;
-            std::for_each(fileThreads.begin(), fileThreads.end(), std::mem_fn(&std::thread::join));
-
             std::cout << "[" << id << "]" << " Search request processing finished from client: " << sharedRequest->getClient()->getId() << std::endl;
 
             /* We unlock the client who is wating for the results*/
@@ -380,7 +381,7 @@ int main(int argc, char const *argv[]){
 
     /*We create the threads that will be doing the search they get from the searchQueue*/
 
-    for(int i = 0; i <= CONCURRENT_SEARCH_REQUESTS; i++) searchThreads.push_back(std::thread(requestManager, i));
+    for (int i = 0; i < CONCURRENT_SEARCH_REQUESTS; i++) searchThreads.push_back(std::thread(requestManager, i));
 
     /*We'll be creating client threads the whole execution time and we won't wait for them to finish*/
 
@@ -393,9 +394,9 @@ int main(int argc, char const *argv[]){
 
         /*We create the client threads and then sleep*/
 
-        for(int i = 0; i < 1; i++) clientThreads.push_back(std::thread(client, i));
+        for(int i = 0; i < numClients; i++) clientThreads.push_back(std::thread(client, i));
         
-        std::this_thread::sleep_for(std::chrono::milliseconds(MAIN_SLEEP_TIME));
+        std::this_thread::sleep_for(std::chrono::seconds(10));
     }
     
     /*We wait for every search thread to finish*/
