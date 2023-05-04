@@ -15,7 +15,8 @@
 #include <queue>
 #include <chrono>
 
-
+std::ofstream glbLog(LOG);
+std::mutex mutexLog;
 std::mutex mutexSemaphore;
 std::vector <std::string> glbWordList = SEARCH_WORDS;
 std::vector <std::string> glbFileList = FILES_NAMES;
@@ -30,6 +31,7 @@ std::condition_variable cvClients;
 std::condition_variable cvRequestsManager;
 std::condition_variable cvBalanceManager;
 std::condition_variable cvBalanceClients;
+int glbClientID = 0;
 
 /*A SearchResult struct is created and queued in the threadData's queue results*/
 
@@ -165,18 +167,33 @@ void searchWord(std::string fileName, threadData* data, clientInfo* client){
 
 /*Funtion that will print the search results*/
 
-void printSearchResult(std::vector<threadData> threadsDataResults){
-    std::cout << "printing results" <<std::endl;
+void printSearchResult(std::vector<threadData> threadsDataResults,  std::shared_ptr<request> sharedRequest){
+    mutexLog.lock();
+    std::cout << "Saving results from client" << sharedRequest->getClient()->getId() <<std::endl;
+    glbLog << "Saving results from cliente" << sharedRequest->getClient()->getId() <<std::endl;
+    mutexLog.unlock();
+
+    std::string fileName = "results/client"+std::to_string(sharedRequest->getClient()->getId());
+    std::ofstream filePointer (fileName);
+    if(!filePointer.is_open()){
+        mutexLog.lock();
+        std::cout << "Error en la creación de archivo" << std::endl;
+        glbLog << "Error en la creación de archivo" << std::endl;
+        mutexLog.unlock();
+        return;
+    }
     for (threadData& element : threadsDataResults){
         while (!element.isEmptyList()){
             struct SearchResult result;
             result = element.dequeueResult();
-    
-            std::cout<<"[Hilo " << element.getId() << " inicio: " << element.getStart() << " - final: ";
-            std::cout << element.getEnd() << "] linea "<< result.line << " :: "<< "..." << result.previousWord << " " << result.consideredWord << " " << result.nextWord << "..."<<std::endl;
+
+
+            filePointer<<"[Hilo " << element.getId() << " inicio: " << element.getStart() << " - final: ";
+            filePointer<< element.getEnd() << "] linea "<< result.line << " :: "<< "..." << result.previousWord << " " << result.consideredWord << " " << result.nextWord << "..."<<std::endl;
         }
         
     }
+    filePointer.close();
     
 }
 
@@ -214,7 +231,11 @@ void calculateLimits(int *upperLimit, int *lowerLimit, int numThreads, int numLi
 void client(int id){
 
     /* We create the cliente with random values */
+    mutexLog.lock();
     std::cout << "Cliente creado" << std::endl;
+    glbLog << "Cliente creado" <<std::endl;
+    mutexLog.unlock();
+
     srand(time(NULL));
     clientInfo client_instance(id, rand() % MAX_CLIENT_BALANCE, rand() % NUM_CLIENT_TYPES, glbWordList[rand() % glbWordList.size()]);
 
@@ -233,8 +254,11 @@ void client(int id){
 
     /* We wait for the results */
     sharedReq->getSemaphore()->lock();
+    mutexLog.lock();
     std::cout<< "Ejecucion de hilo: " << id << " Finalizada" << "saldo restante" << sharedReq->getClient()->getBalance()<<std::endl;
-    printSearchResult(client_instance.getResult());
+    glbLog << "Ejecucion de hilo: " << id << " Finalizada" << "saldo restante" << sharedReq->getClient()->getBalance()<<std::endl;
+    mutexLog.unlock();
+    printSearchResult(client_instance.getResult(), sharedReq);
     
 }
 
@@ -245,16 +269,17 @@ void createFileThreads(std::vector<threadData> *threadsDataResults, std::vector<
     for(int i = 0; i < NUM_OF_FILES; i++){
         int numLines = calculateTotalLines(glbFileList[i]);
         for(int z = 0; z < NUM_OF_THREADS_IN_FILE; z++){
-            std::cout << counter_threadID << std::endl;
             threadsDataResults->push_back(threadData(counter_threadID, 0, numLines, sharedRequest->getClient()->getWordToSearch()));
             counter_threadID++;
         }
     }
-    std::cout << threadsDataResults->size() << std::endl;
+
+    /* We create the threads with the asocited threadData*/
     counter_threadID = 0;
     for (int i = 0; i < NUM_OF_FILES; i++) for (int z = 0; z < NUM_OF_THREADS_IN_FILE; z++, counter_threadID++)
      fileThreads->push_back(std::thread(searchWord, glbFileList[i], &threadsDataResults->at(counter_threadID), sharedRequest->getClient()));
-    std::cout << fileThreads->size()<< std::endl;
+
+    /* We wait for the threads */
     std::for_each(fileThreads->begin(), fileThreads->end(), std::mem_fn(&std::thread::join));
 }
 
@@ -299,39 +324,38 @@ void requestManager(int id){
 
     while (1)
     {
-        /* We ensure that the queue has one or more elements*/
+        /* We ensure that the queue has one or more elements */
         std::unique_lock<std::mutex> lock(full);
         cvRequestsManager.wait(lock, []{return searchQueue.size() > 0; });
 
         /* We ensure the mutual exlusion while accessing the queue*/
         mtxSearchQueue.lock();
-        if((selectedRequestPosition = selectSearchRequest()) == -1){
-            std::cout << "[" << id << "]" << " No search requests available" << std::endl;
-            mtxSearchQueue.unlock();
-            /* We advertise the client that the queue has a free space */
-            empty.unlock();
-            cvClients.notify_one();
-            std::this_thread::sleep_for(std::chrono::seconds(2));
-        }else{
-            std::shared_ptr<request> sharedRequest = std::move(searchQueue[selectedRequestPosition]);
-            searchQueue.erase(searchQueue.begin() + selectedRequestPosition);
-            mtxSearchQueue.unlock();
+        std::shared_ptr<request> sharedRequest = std::move(searchQueue[selectedRequestPosition]);
+        searchQueue.erase(searchQueue.begin() + selectedRequestPosition);
+        mtxSearchQueue.unlock();
 
-            /* We advertise the client that the queue has a free space */
-            empty.unlock();
-            cvClients.notify_one();
-            /* We have to create here the threads for the search*/
-            std::cout << "[" << id << "]" << " Processing search request from client: " << sharedRequest->getClient()->getId() << std::endl;
-            createFileThreads(&threadsDataResults, &fileThreads, sharedRequest);
-            std::cout << "[" << id << "]" << " Search request processing finished from client: " << sharedRequest->getClient()->getId() << std::endl;
+        /* We advertise the client that the queue has a free space */
+        empty.unlock();
+        cvClients.notify_one();
+        /* We have to create here the threads for the search*/
+        mutexLog.lock();
+        std::cout << "[" << id << "]" << " Processing search request from client: " << sharedRequest->getClient()->getId() << std::endl;
+        glbLog << "[" << id << "]" << " Processing search request from client: " << sharedRequest->getClient()->getId() << std::endl;
+        mutexLog.unlock();
 
-            /* We unlock the client who is wating for the results*/
-            sharedRequest->getClient()->setResult(threadsDataResults);
-            sharedRequest->getSemaphore()->unlock();
-            fileThreads.clear();
-            threadsDataResults.clear();
-            std::this_thread::sleep_for(std::chrono::seconds(2));
-        }
+        createFileThreads(&threadsDataResults, &fileThreads, sharedRequest);
+
+        mutexLog.lock();
+        std::cout << "[" << id << "]" << " Search request processing finished from client: " << sharedRequest->getClient()->getId() << std::endl;
+        glbLog << "[" << id << "]" << " Search request processing finished from client: " << sharedRequest->getClient()->getId() << std::endl;
+        mutexLog.unlock();
+
+        /* We unlock the client who is wating for the results*/
+        sharedRequest->getClient()->setResult(threadsDataResults);
+        sharedRequest->getSemaphore()->unlock();
+        fileThreads.clear();
+        threadsDataResults.clear();
+        std::this_thread::sleep_for(std::chrono::seconds(2));
         
     }
     
@@ -354,7 +378,10 @@ void balanceManager(){
         balanceQueue.pop();
         mtxBalanceQueue.unlock();
 
+        mutexLog.lock();
         std::cout << "[BALANCE_MANAGER]" << " Processing balance request from client: " << sharedRequest->getClient()->getId() << std::endl;
+        glbLog << "[BALANCE_MANAGER]" << " Processing balance request from client: " << sharedRequest->getClient()->getId() << std::endl;
+        mutexLog.unlock();
 
         /* We advertise the search thread that the queue has a free space */
         empty.unlock();
@@ -367,7 +394,10 @@ void balanceManager(){
         /* We unlock the search thread who is wating for the results*/
         sharedRequest->getSemaphore()->unlock();
 
+        mutexLog.lock();
         std::cout << "[BALANCE_MANAGER]" << " Credits added to client: " << sharedRequest->getClient()->getId() << std::endl;
+        glbLog << "[BALANCE_MANAGER]" << " Credits added to client: " << sharedRequest->getClient()->getId() << std::endl;
+        mutexLog.unlock();
     }
 
 }
@@ -382,7 +412,7 @@ int main(int argc, char const *argv[]){
     /*We create the threads that will be doing the search they get from the searchQueue*/
 
     for (int i = 0; i < CONCURRENT_SEARCH_REQUESTS; i++) searchThreads.push_back(std::thread(requestManager, i));
-
+    //
     /*We'll be creating client threads the whole execution time and we won't wait for them to finish*/
 
     while(true){
@@ -394,7 +424,7 @@ int main(int argc, char const *argv[]){
 
         /*We create the client threads and then sleep*/
 
-        for(int i = 0; i < numClients; i++) clientThreads.push_back(std::thread(client, i));
+        for(int i = 0; i < numClients; i++, glbClientID++) clientThreads.push_back(std::thread(client, glbClientID));
         
         std::this_thread::sleep_for(std::chrono::seconds(10));
     }

@@ -1,0 +1,20 @@
+Cliente creado
+Cliente creado
+[0] Processing search request from client: 0
+Cliente creado
+Cliente creado
+[1] Processing search request from client: 1
+[2] Processing search request from client: 3
+[3] Processing search request from client: 2
+[3] Search request processing finished from client: 2
+Ejecucion de hilo: 2 Finalizadasaldo restante798
+Saving results from cliente2
+[2] Search request processing finished from client: 3
+[0] Search request processing finished from client: 0
+Ejecucion de hilo: 3 Finalizadasaldo restante798
+Ejecucion de hilo: 0 Finalizadasaldo restante798
+Saving results from cliente3
+Saving results from cliente0
+[1] Search request processing finished from client: 1
+Ejecucion de hilo: 1 Finalizadasaldo restante798
+Saving results from cliente1

@@ -3,6 +3,7 @@ DIREXE := exec/
 DIRHEA := include/
 DIRSRC := src/
 DIRTXT := textos/
+DIRRESULT := results/
 
 CFLAGS := -I$(DIRHEA) -c
 LDLIBS := -pthread -std=c++17
@@ -11,7 +12,7 @@ CC := g++
 all : dirs main 
 
 dirs:
-	mkdir -p $(DIROBJ) $(DIREXE) $(DIRHEA) $(DIRSRC)
+	mkdir -p $(DIROBJ) $(DIREXE) $(DIRHEA) $(DIRSRC) $(DIRRESULT)
 
 threadData: $(DIROBJ)threadData.o
 	$(CC) -o $(DIREXE)$@ $^ $(LDLIBS) -Xlinker $(DIRHEA)
@@ -32,4 +33,4 @@ $(DIROBJ)%.o: $(DIRSRC)%.cpp
 	$(CC) $(CFLAGS) $^ -o $@
 
 clean : 
-	rm -rf *~ core $(DIROBJ) $(DIREXE) $(DIRHEA)*~ $(DIRSRC)*~
+	rm -rf *~ core $(DIROBJ) $(DIREXE) $(DIRHEA)*~ $(DIRSRC)*~ $(DIRRESULT)*~
