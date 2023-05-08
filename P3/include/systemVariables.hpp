@@ -9,7 +9,7 @@
 #define MAIN_SLEEP_TIME 3000
 #define MAX_CLIENT_BALANCE 1000
 #define WORD_FOUND_COST 1
-#define FILES_NAMES {"textos/17-LEYES-DEL-TRABAJO-EN-EQUIPO.txt", "textos/21-LEYES-DEL-LIDERAZGO.txt", "textos/25-MANERAS-DE-GANARSE-A-LA-GENTE.txt", "textos/ACTITUD-DE-VENCEDOR.txt", "textos/El-oro-y-la-ceniza.txt", "textos/La-última-sirena.txt", "textos/prueba.txt", "textos/SEAMOS-PERSONAS-DE-INFLUENCIA.txt", "textos/VIVE-TU-SUEÑO.txt"}
+#define FILES_NAMES {"textos/17-LEYES-DEL-TRABJO-EN-EQUIPO.txt", "textos/21-LEYES-DEL-LIDERAZGO.txt", "textos/25-MANERAS-DE-GANARSE-A-LA-GENTE.txt", "textos/ACTITUD-DE-VENDEDOR.txt", "textos/El-oro-y-la-ceniza.txt", "textos/La-última-sirena.txt", "textos/prueba.txt", "textos/SEAMOS-PERSONAS-DE-INFLUENCIA.txt", "textos/VIVE-TU-SUEÑO.txt"}
 #define NUM_OF_FILES 9
 #define RESULTDIR "results/"
 #define LOG "results/log.txt"

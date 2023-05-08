@@ -202,16 +202,16 @@ void printSearchResult(std::vector<threadData> threadsDataResults,  std::shared_
 void calculateLimits(int *upperLimit, int *lowerLimit, int numThreads, int numLines, int i){
     int linesPerThread = numLines/numThreads;
 
-    *lowerLimit = (i)*linesPerThread;
-    *upperLimit = *upperLimit - linesPerThread + 1;
+    *lowerLimit = (i)*linesPerThread+1;
+    *upperLimit = *lowerLimit + linesPerThread;
 
-    if(i == 1){
+    if(i == 0){
         *upperLimit = linesPerThread;
         *lowerLimit = 1;
     } 
     
-    if(i == numThreads) *upperLimit = numLines;
-    std::cout << lowerLimit << " " << *upperLimit <<std::endl;
+    if(i == numThreads-1) *upperLimit = numLines;
+    std::cout << *lowerLimit << " " << *upperLimit <<std::endl;
 }
 
 /*Function tha will create the thread data objects where the results will be saved*/
@@ -266,10 +266,12 @@ void client(int id){
 
 void createFileThreads(std::vector<threadData> *threadsDataResults, std::vector<std::thread> *fileThreads, std::shared_ptr<request> sharedRequest){
     int counter_threadID = 0;
+    int lowerLimit = 0, upperLimit = 0;
     for(int i = 0; i < NUM_OF_FILES; i++){
         int numLines = calculateTotalLines(glbFileList[i]);
         for(int z = 0; z < NUM_OF_THREADS_IN_FILE; z++){
-            threadsDataResults->push_back(threadData(counter_threadID, 0, numLines, sharedRequest->getClient()->getWordToSearch()));
+            calculateLimits(&upperLimit, &lowerLimit, NUM_OF_THREADS_IN_FILE, numLines, z);
+            threadsDataResults->push_back(threadData(counter_threadID, lowerLimit, upperLimit, sharedRequest->getClient()->getWordToSearch()));
             counter_threadID++;
         }
     }
