@@ -120,6 +120,33 @@ void searchWord(std::string fileName, threadData* data, clientInfo* client){
 
     for(int i = startLine; i <= endLine; i++){
 
+        /*We check that the client has enough credits to do the search. If the client doesn't have enough credits it will send a balance request*/
+
+        if((client->getType() == 1) && ((client->getBalance() - WORD_FOUND_COST) >= 0)){
+            client->setBalance(client->getBalance() - WORD_FOUND_COST);
+        } else if(client->getType() == 1){
+            std::cout << "\033[0;37mClient " << client->getId() << " has run out of credits. Sending request to balance manager\033[0m" << std::endl;
+
+            /*We create the request and push it to the balance queue*/
+            std::mutex local_mtx;
+            request balanceRequest(client, std::this_thread::get_id(), &local_mtx);
+
+            mtxBalanceQueue.lock();
+            std::shared_ptr<request> sharedReq = std::make_shared<request>(balanceRequest);
+            balanceQueue.push(sharedReq);
+            mtxBalanceQueue.unlock();
+
+            /* We advise the balance system that a request is available */
+            cvBalanceManager.notify_one();
+
+            /* We wait for the results */
+            sharedReq->getSemaphore()->lock();
+            mutexLog.lock();
+            std::cout<< "\033[0;37mClient: " << client->getId() << " balance updated. Continuing search \033[0m" << std::endl;
+            glbLog << "Client: " << client->getId() << " balance updated. Continuing search" << sharedReq->getClient()->getBalance()<<std::endl;
+            mutexLog.unlock();
+        }
+
         /*We get the line and convert its character to lower case in order to do a better search*/
 
         getline(file, line);
@@ -213,18 +240,6 @@ void calculateLimits(int *upperLimit, int *lowerLimit, int numThreads, int numLi
 
 }
 
-/*Function tha will create the thread data objects where the results will be saved*/
-
-/*void createThreadData(std::vector<threadData> *threadsDataResults, int numThreads, int numLines, std::string wordToFind){
-    
-    int upperLimit, lowerLimit;
-
-    for(int i = 1; i <= numThreads; i++){
-        //calculateLimits(&upperLimit, &lowerLimit, numThreads, numLines, i);
-        threadsDataResults->push_back(threadData(i, 0, numLines, wordToFind));
-    }
-}*/
-
 /*Piece of code that will be executed by the clients*/
 
 void client(int id){
@@ -232,7 +247,7 @@ void client(int id){
     /* We create the cliente with random values */
     mutexLog.lock();
     std::cout << "\033[0;37mClient created\033[0m" << std::endl;
-    glbLog << "Client created" <<std::endl;
+    glbLog << "Client created" << std::endl;
     mutexLog.unlock();
 
     srand(time(NULL));
@@ -396,8 +411,8 @@ void balanceManager(){
         sharedRequest->getSemaphore()->unlock();
 
         mutexLog.lock();
-        std::cout << "\033[0;33m[BALANCE_MANAGER]" << " Credits added to client: " << sharedRequest->getClient()->getId() << "\033[0m" << std::endl;
-        glbLog << "[BALANCE_MANAGER]" << " Credits added to client: " << sharedRequest->getClient()->getId() << std::endl;
+        std::cout << "\033[0;33m[BALANCE_MANAGER] " << sharedRequest->getClient()->getBalance() << " Credits added to client: " << sharedRequest->getClient()->getId() << "\033[0m" << std::endl;
+        glbLog << "[BALANCE_MANAGER] " << sharedRequest->getClient()->getBalance() << " Credits added to client: " << sharedRequest->getClient()->getId() << std::endl;
         mutexLog.unlock();
     }
 
@@ -433,6 +448,7 @@ int main(int argc, char const *argv[]){
     /*We wait for every search thread to finish*/
 
     std::for_each(searchThreads.begin(),searchThreads.end(),std::mem_fn(&std::thread::join));
+    balanceManagerThread.join();
 
     return 0;
 }
