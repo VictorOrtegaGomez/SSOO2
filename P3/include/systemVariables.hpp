@@ -2,7 +2,7 @@
 #define CLIENT_TYPES {"unlimitedPremium", "limitedPremium", "nonPremium"}
 #define NUM_CLIENT_TYPES 3
 #define CONCURRENT_SEARCH_REQUESTS 5
-#define NUM_OF_THREADS_IN_FILE 2
+#define NUM_OF_THREADS_IN_FILE 10
 #define SEARCH_WORDS {"castillo", "david", "ley", "vencer", "mar", "sueño", "oro", "hasta", "casa", "cielo"}
 #define SEARCH_QUEUE_SIZE 5;
 #define MAX_CLIENT_CREATION 5
