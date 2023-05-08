@@ -33,4 +33,4 @@ $(DIROBJ)%.o: $(DIRSRC)%.cpp
 	$(CC) $(CFLAGS) $^ -o $@
 
 clean : 
-	rm -rf *~ core $(DIROBJ) $(DIREXE) $(DIRHEA)*~ $(DIRSRC)*~ $(DIRRESULT)*~
+	rm -rf *~ core $(DIROBJ) $(DIREXE) $(DIRHEA)*~ $(DIRSRC)*~ $(DIRRESULT)
