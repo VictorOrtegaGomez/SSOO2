@@ -1,0 +1,1970 @@
+Client created
+[0] Processing search request from client: 0
+[0] Search request processing finished from client: 0
+Thread: 0 execution finished - Remaining balance: 205
+Saving results from client: 0
+Client created
+[1] Processing search request from client: 1
+[1] Search request processing finished from client: 1
+Thread: 1 execution finished - Remaining balance: 486
+Saving results from client: 1
+Client created
+Client created
+Client created
+Client created
+[4] Processing search request from client: 4
+[0] Processing search request from client: 5
+[3] Processing search request from client: 3
+[2] Processing search request from client: 2
+[3] Search request processing finished from client: 3
+Thread: 3 execution finished - Remaining balance: 248
+Saving results from client: 3
+[4] Search request processing finished from client: 4
+Thread: 4 execution finished - Remaining balance: 248
+Saving results from client: 4
+[0] Search request processing finished from client: 5
+Thread: 5 execution finished - Remaining balance: 248
+Saving results from client: 5
+[2] Search request processing finished from client: 2
+Thread: 2 execution finished - Remaining balance: 248
+Saving results from client: 2
+Client created
+Client created
+[1] Processing search request from client: 6
+[3] Processing search request from client: 7
+[1] Search request processing finished from client: 6
+Thread: 6 execution finished - Remaining balance: 239
+Saving results from client: 6
+[3] Search request processing finished from client: 7
+Thread: 7 execution finished - Remaining balance: 239
+Saving results from client: 7
+Client created
+Client created
+[4] Processing search request from client: 8
+[0] Processing search request from client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search813
+[BALANCE_MANAGER] 0 Credits added to client: 9
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+Client: 9 balance updated. Continuing search420
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 799 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search745
+Client: 8 balance updated. Continuing search721
+Client: 8 balance updated. Continuing search449
+Client: 8 balance updated. Continuing search0
+[BALANCE_MANAGER] 0 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 820 Credits added to client: 9
+Client: 9 balance updated. Continuing search729
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 806 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 806 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search822
+Client: 9 balance updated. Continuing search720
+Client: 9 balance updated. Continuing search698
+Client: 9 balance updated. Continuing search414
+[BALANCE_MANAGER] 382 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 801 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 800 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 800 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 801 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 794 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search793
+Client: 9 balance updated. Continuing search608
+Client: 8 balance updated. Continuing search718
+Client: 8 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+[BALANCE_MANAGER] 0 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+[BALANCE_MANAGER] 821 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search812
+Client: 9 balance updated. Continuing search809
+[BALANCE_MANAGER] 452 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search804
+[BALANCE_MANAGER] 72 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+Client: 8 balance updated. Continuing search822
+Client: 9 balance updated. Continuing search471
+Client: 8 balance updated. Continuing search259
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search382
+Client: 8 balance updated. Continuing search757
+[BALANCE_MANAGER] 718 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 807 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search736
+[BALANCE_MANAGER] 718 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 810 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 812 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 816 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search804
+Client: 9 balance updated. Continuing search618
+[BALANCE_MANAGER] 753 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 527 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 814 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 808 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search738
+Client: 9 balance updated. Continuing search733
+Client: 9 balance updated. Continuing search0
+[BALANCE_MANAGER] 0 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+Client: 9 balance updated. Continuing search816
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+[BALANCE_MANAGER] 0 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search822
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search822
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 792 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 816 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search815
+[BALANCE_MANAGER] 805 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 811 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search816
+Client: 8 balance updated. Continuing search800
+[BALANCE_MANAGER] 779 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 810 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 817 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 814 Credits added to client: 8
+Client: 8 balance updated. Continuing search795
+Client: 8 balance updated. Continuing search769
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 817 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 817 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 817 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search816
+Client: 8 balance updated. Continuing search0
+[BALANCE_MANAGER] 537 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+Client: 9 balance updated. Continuing search504
+Client: 9 balance updated. Continuing search485
+[BALANCE_MANAGER] 808 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 814 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 795 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 791 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 818 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search809
+Client: 9 balance updated. Continuing search767
+Client: 9 balance updated. Continuing search738
+[BALANCE_MANAGER] 0 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 819 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search820
+Client: 9 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search800
+Client: 8 balance updated. Continuing search794
+Client: 9 balance updated. Continuing search0
+[BALANCE_MANAGER] 736 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+Client: 8 balance updated. Continuing search644
+[BALANCE_MANAGER] 821 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search821
+[BALANCE_MANAGER] 794 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 814 Credits added to client: 8
+Client: 8 balance updated. Continuing search796
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 812 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 819 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 820 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 820 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 819 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 819 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 807 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 807 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 811 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 813 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 818 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 807 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 819 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 817 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 813 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 808 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 819 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search818
+Client: 9 balance updated. Continuing search812
+[BALANCE_MANAGER] 774 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 813 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 816 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 818 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 814 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 811 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 818 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 811 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 814 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 813 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 813 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 816 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search722
+Client: 9 balance updated. Continuing search713
+Client: 8 balance updated. Continuing search733
+Client: 9 balance updated. Continuing search608
+Client: 9 balance updated. Continuing search76
+Client: 8 balance updated. Continuing search20
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+[BALANCE_MANAGER] 0 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search822
+Client: 9 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search266
+Client: 9 balance updated. Continuing search0
+[BALANCE_MANAGER] 243 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 814 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search817
+[BALANCE_MANAGER] 806 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 813 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search815
+[BALANCE_MANAGER] 797 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search814
+[BALANCE_MANAGER] 791 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search749
+[BALANCE_MANAGER] 813 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 810 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 809 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search808
+[BALANCE_MANAGER] 780 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 797 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 820 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 820 Credits added to client: 9
+Client: 9 balance updated. Continuing search815
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 817 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 817 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 812 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search760
+[BALANCE_MANAGER] 811 Credits added to client: 9
+Client: 8 balance updated. Continuing search694
+Client: 9 balance updated. Continuing search795
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 807 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search815
+Client: 8 balance updated. Continuing search416
+Client: 9 balance updated. Continuing search68
+[BALANCE_MANAGER] 31 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+Client: 9 balance updated. Continuing search819
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search774
+[BALANCE_MANAGER] 765 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 817 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search817
+[BALANCE_MANAGER] 806 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 814 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 816 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 811 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search812
+Client: 9 balance updated. Continuing search724
+[BALANCE_MANAGER] 671 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 791 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+[BALANCE_MANAGER] 821 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 811 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+Client: 9 balance updated. Continuing search672
+[BALANCE_MANAGER] 816 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 793 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 798 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 804 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search794
+Client: 8 balance updated. Continuing search790
+[BALANCE_MANAGER] 694 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 817 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 806 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search732
+Client: 8 balance updated. Continuing search776
+[BALANCE_MANAGER] 754 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 800 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 790 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 814 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 815 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 810 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search789
+Client: 9 balance updated. Continuing search761
+Client: 9 balance updated. Continuing search401
+Client: 8 balance updated. Continuing search323
+Client: 9 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+[BALANCE_MANAGER] 0 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search822
+Client: 8 balance updated. Continuing search820
+Client: 8 balance updated. Continuing search0
+[BALANCE_MANAGER] 0 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+Client: 8 balance updated. Continuing search821
+[BALANCE_MANAGER] 812 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+Client: 8 balance updated. Continuing search767
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 820 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 820 Credits added to client: 9
+Client: 9 balance updated. Continuing search817
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search805
+Client: 9 balance updated. Continuing search797
+[BALANCE_MANAGER] 786 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 808 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search818
+[BALANCE_MANAGER] 804 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search809
+[BALANCE_MANAGER] 783 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 808 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 809 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 813 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search775
+[BALANCE_MANAGER] 793 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search764
+[BALANCE_MANAGER] 776 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 807 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 808 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search808
+[BALANCE_MANAGER] 783 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 807 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 807 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search752
+[BALANCE_MANAGER] 777 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 804 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 808 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 804 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 805 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search813
+[BALANCE_MANAGER] 781 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 793 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 809 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search803
+Client: 9 balance updated. Continuing search774
+Client: 9 balance updated. Continuing search745
+[BALANCE_MANAGER] 715 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 800 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 809 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 800 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 812 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 687 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 803 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 807 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 808 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 0 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+Client: 8 balance updated. Continuing search822
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search808
+Client: 8 balance updated. Continuing search801
+Client: 8 balance updated. Continuing search405
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+[BALANCE_MANAGER] 0 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+Client: 8 balance updated. Continuing search245
+Client: 8 balance updated. Continuing search0
+[BALANCE_MANAGER] 0 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search822
+Client: 9 balance updated. Continuing search820
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search822
+Client: 9 balance updated. Continuing search794
+[BALANCE_MANAGER] 768 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 804 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 814 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 789 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search791
+Client: 9 balance updated. Continuing search787
+[BALANCE_MANAGER] 757 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 820 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 811 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 809 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 819 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search733
+Client: 9 balance updated. Continuing search723
+[BALANCE_MANAGER] 802 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 807 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 817 Credits added to client: 8
+Client: 8 balance updated. Continuing search805
+Client: 8 balance updated. Continuing search792
+Client: 9 balance updated. Continuing search20
+Client: 8 balance updated. Continuing search450
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+Client: 9 balance updated. Continuing search817
+Client: 9 balance updated. Continuing search802
+[BALANCE_MANAGER] 783 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 815 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 813 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search822
+Client: 9 balance updated. Continuing search779
+Client: 8 balance updated. Continuing search577
+Client: 8 balance updated. Continuing search498
+Client: 9 balance updated. Continuing search0
+[BALANCE_MANAGER] 0 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 819 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search795
+Client: 9 balance updated. Continuing search0
+[BALANCE_MANAGER] 705 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 817 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 817 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search803
+Client: 8 balance updated. Continuing search770
+[BALANCE_MANAGER] 732 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 809 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 811 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 805 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 812 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+Client: 9 balance updated. Continuing search819
+Client: 8 balance updated. Continuing search619
+Client: 9 balance updated. Continuing search800
+[BALANCE_MANAGER] 782 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 809 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 812 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search813
+Client: 8 balance updated. Continuing search190
+Client: 8 balance updated. Continuing search17
+Client: 8 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search440
+Client: 9 balance updated. Continuing search392
+Client: 8 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search183
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+[BALANCE_MANAGER] 0 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 820 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search819
+Client: 9 balance updated. Continuing search809
+[BALANCE_MANAGER] 798 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 816 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search815
+Client: 9 balance updated. Continuing search801
+[BALANCE_MANAGER] 0 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+Client: 9 balance updated. Continuing search817
+[BALANCE_MANAGER] 793 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search822
+Client: 8 balance updated. Continuing search799
+Client: 8 balance updated. Continuing search797
+Client: 9 balance updated. Continuing search716
+[BALANCE_MANAGER] 692 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 818 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search809
+[BALANCE_MANAGER] 798 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search809
+[BALANCE_MANAGER] 783 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search750
+[BALANCE_MANAGER] 726 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 809 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 816 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search807
+Client: 8 balance updated. Continuing search766
+Client: 8 balance updated. Continuing search733
+[BALANCE_MANAGER] 607 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 803 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search809
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+[BALANCE_MANAGER] 0 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+[BALANCE_MANAGER] 821 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+Client: 8 balance updated. Continuing search821
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 785 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 807 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 818 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search820
+Client: 8 balance updated. Continuing search266
+Client: 8 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search85
+Client: 9 balance updated. Continuing search0
+[BALANCE_MANAGER] 0 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 819 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 817 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search800
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+Client: 8 balance updated. Continuing search819
+[BALANCE_MANAGER] 814 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search816
+[BALANCE_MANAGER] 804 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search779
+Client: 9 balance updated. Continuing search792
+[BALANCE_MANAGER] 0 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search822
+[BALANCE_MANAGER] 817 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 820 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search820
+[BALANCE_MANAGER] 817 Credits added to client: 9
+Client: 9 balance updated. Continuing search811
+Client: 8 balance updated. Continuing search347
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 819 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search815
+Client: 9 balance updated. Continuing search0
+[BALANCE_MANAGER] 780 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 815 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 818 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 818 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search800
+Client: 8 balance updated. Continuing search589
+Client: 8 balance updated. Continuing search526
+Client: 8 balance updated. Continuing search459
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 816 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search802
+[BALANCE_MANAGER] 786 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 817 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 773 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search755
+Client: 8 balance updated. Continuing search822
+Client: 9 balance updated. Continuing search732
+[BALANCE_MANAGER] 815 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search677
+[BALANCE_MANAGER] 812 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search818
+[BALANCE_MANAGER] 808 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search811
+[BALANCE_MANAGER] 797 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search768
+[BALANCE_MANAGER] 783 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search734
+[BALANCE_MANAGER] 776 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search706
+Client: 9 balance updated. Continuing search732
+[BALANCE_MANAGER] 0 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+Client: 8 balance updated. Continuing search822
+[BALANCE_MANAGER] 813 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 811 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search799
+[BALANCE_MANAGER] 815 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search820
+[BALANCE_MANAGER] 815 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search820
+Client: 9 balance updated. Continuing search815
+[BALANCE_MANAGER] 800 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 812 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search792
+[BALANCE_MANAGER] 803 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search809
+Client: 8 balance updated. Continuing search786
+[BALANCE_MANAGER] 1 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search822
+[BALANCE_MANAGER] 798 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search773
+[BALANCE_MANAGER] 788 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 812 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search805
+Client: 8 balance updated. Continuing search713
+[BALANCE_MANAGER] 722 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search617
+[BALANCE_MANAGER] 783 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 816 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 805 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search805
+Client: 8 balance updated. Continuing search680
+Client: 8 balance updated. Continuing search0
+[BALANCE_MANAGER] 0 Credits added to client: 8
+Client: 8 balance updated. Continuing search0
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search822
+[BALANCE_MANAGER] 815 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search800
+[BALANCE_MANAGER] 815 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search811
+[BALANCE_MANAGER] 809 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search796
+[BALANCE_MANAGER] 809 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search795
+[BALANCE_MANAGER] 761 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search801
+[BALANCE_MANAGER] 770 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search805
+Client: 9 balance updated. Continuing search756
+[BALANCE_MANAGER] 720 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 818 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search798
+[BALANCE_MANAGER] 755 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search796
+[BALANCE_MANAGER] 746 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 790 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search675
+Client: 8 balance updated. Continuing search772
+Client: 9 balance updated. Continuing search0
+[BALANCE_MANAGER] 0 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+Client: 8 balance updated. Continuing search822
+[BALANCE_MANAGER] 818 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search821
+[BALANCE_MANAGER] 817 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search820
+[BALANCE_MANAGER] 812 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search790
+[BALANCE_MANAGER] 815 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search809
+Client: 8 balance updated. Continuing search805
+[BALANCE_MANAGER] 795 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 810 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 809 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search812
+[BALANCE_MANAGER] 781 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search714
+[BALANCE_MANAGER] 790 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search803
+[BALANCE_MANAGER] 760 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 788 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search757
+[BALANCE_MANAGER] 0 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search106
+Client: 8 balance updated. Continuing search86
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 820 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search818
+[BALANCE_MANAGER] 815 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search817
+[BALANCE_MANAGER] 805 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search770
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+Client: 8 balance updated. Continuing search822
+[BALANCE_MANAGER] 815 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 811 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search769
+[BALANCE_MANAGER] 807 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search814
+[BALANCE_MANAGER] 791 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search810
+[BALANCE_MANAGER] 786 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 807 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search816
+Client: 9 balance updated. Continuing search776
+Client: 8 balance updated. Continuing search637
+[BALANCE_MANAGER] 673 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 576 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search784
+[BALANCE_MANAGER] 717 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search792
+[BALANCE_MANAGER] 0 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search0
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+[BALANCE_MANAGER] 819 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search821
+[BALANCE_MANAGER] 812 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search819
+[BALANCE_MANAGER] 808 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search820
+[BALANCE_MANAGER] 810 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search813
+[BALANCE_MANAGER] 798 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search773
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 817 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search817
+[BALANCE_MANAGER] 807 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search814
+Client: 9 balance updated. Continuing search799
+[BALANCE_MANAGER] 0 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+Client: 8 balance updated. Continuing search822
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 819 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search811
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 821 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search816
+[BALANCE_MANAGER] 812 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search796
+[BALANCE_MANAGER] 814 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search820
+[BALANCE_MANAGER] 814 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search814
+[BALANCE_MANAGER] 797 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search811
+[BALANCE_MANAGER] 790 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search811
+[BALANCE_MANAGER] 785 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search714
+Client: 8 balance updated. Continuing search785
+[BALANCE_MANAGER] 711 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 808 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search791
+[BALANCE_MANAGER] 767 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search799
+Client: 8 balance updated. Continuing search374
+[BALANCE_MANAGER] 0 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+[BALANCE_MANAGER] 817 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search816
+[BALANCE_MANAGER] 812 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search800
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 818 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 819 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search817
+[BALANCE_MANAGER] 810 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search776
+[BALANCE_MANAGER] 797 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search812
+[BALANCE_MANAGER] 789 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search810
+Client: 8 balance updated. Continuing search787
+[BALANCE_MANAGER] 28 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 819 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search802
+[BALANCE_MANAGER] 805 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search816
+[BALANCE_MANAGER] 801 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search768
+[BALANCE_MANAGER] 796 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search808
+[BALANCE_MANAGER] 791 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search801
+Client: 8 balance updated. Continuing search774
+[BALANCE_MANAGER] 426 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search783
+[BALANCE_MANAGER] 700 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 820 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search817
+[BALANCE_MANAGER] 810 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search813
+[BALANCE_MANAGER] 798 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search816
+Client: 9 balance updated. Continuing search802
+[BALANCE_MANAGER] 773 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 799 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search762
+[BALANCE_MANAGER] 779 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search809
+[BALANCE_MANAGER] 781 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search794
+Client: 8 balance updated. Continuing search762
+[BALANCE_MANAGER] 695 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search799
+[BALANCE_MANAGER] 0 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search821
+[BALANCE_MANAGER] 816 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search818
+[BALANCE_MANAGER] 805 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search808
+[BALANCE_MANAGER] 790 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search816
+[BALANCE_MANAGER] 789 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search809
+[BALANCE_MANAGER] 775 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search733
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 820 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search820
+[BALANCE_MANAGER] 808 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search812
+[BALANCE_MANAGER] 782 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 768 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 799 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search812
+[BALANCE_MANAGER] 773 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 794 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 805 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search807
+[BALANCE_MANAGER] 757 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 782 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 803 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search809
+[BALANCE_MANAGER] 763 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 791 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 786 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search811
+[BALANCE_MANAGER] 774 Credits added to client: 9
+Client: 9 balance updated. Continuing search762
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search812
+Client: 8 balance updated. Continuing search175
+[BALANCE_MANAGER] 759 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search682
+Client: 8 balance updated. Continuing search735
+Client: 8 balance updated. Continuing search593
+Client: 8 balance updated. Continuing search164
+Client: 9 balance updated. Continuing search60
+Client: 8 balance updated. Continuing search0
+[BALANCE_MANAGER] 0 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search822
+Client: 9 balance updated. Continuing search0
+[BALANCE_MANAGER] 816 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search820
+[BALANCE_MANAGER] 817 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search819
+[BALANCE_MANAGER] 809 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search781
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 821 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search820
+[BALANCE_MANAGER] 814 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search814
+[BALANCE_MANAGER] 794 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search809
+[BALANCE_MANAGER] 781 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search805
+[BALANCE_MANAGER] 782 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search807
+Client: 9 balance updated. Continuing search761
+[BALANCE_MANAGER] 724 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 774 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search639
+[BALANCE_MANAGER] 781 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 815 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search818
+[BALANCE_MANAGER] 808 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 794 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 798 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 790 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 784 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search804
+[BALANCE_MANAGER] 764 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 816 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search811
+Client: 9 balance updated. Continuing search578
+[BALANCE_MANAGER] 778 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 813 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 815 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 814 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 819 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 817 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search807
+Client: 8 balance updated. Continuing search764
+Client: 8 balance updated. Continuing search577
+Client: 8 balance updated. Continuing search530
+Client: 8 balance updated. Continuing search481
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search317
+Client: 8 balance updated. Continuing search246
+Client: 9 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+[BALANCE_MANAGER] 0 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+[BALANCE_MANAGER] 818 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search820
+[BALANCE_MANAGER] 808 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search792
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 817 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search820
+[BALANCE_MANAGER] 812 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search817
+Client: 9 balance updated. Continuing search807
+[BALANCE_MANAGER] 764 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 802 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search814
+[BALANCE_MANAGER] 772 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search806
+[BALANCE_MANAGER] 751 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search801
+[BALANCE_MANAGER] 764 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search791
+[BALANCE_MANAGER] 705 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 814 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 817 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search798
+[BALANCE_MANAGER] 739 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search216
+[BALANCE_MANAGER] 795 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search816
+[BALANCE_MANAGER] 797 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search705
+Client: 9 balance updated. Continuing search732
+Client: 8 balance updated. Continuing search208
+[BALANCE_MANAGER] 0 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 819 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search819
+[BALANCE_MANAGER] 812 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search815
+[BALANCE_MANAGER] 753 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search789
+[BALANCE_MANAGER] 773 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search812
+[BALANCE_MANAGER] 793 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search813
+[BALANCE_MANAGER] 793 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search748
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+[BALANCE_MANAGER] 821 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search819
+[BALANCE_MANAGER] 809 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 816 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search796
+[BALANCE_MANAGER] 795 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search810
+[BALANCE_MANAGER] 785 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search741
+[BALANCE_MANAGER] 710 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 787 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search779
+[BALANCE_MANAGER] 723 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 764 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 665 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search590
+Client: 9 balance updated. Continuing search521
+Client: 8 balance updated. Continuing search557
+Client: 9 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+[BALANCE_MANAGER] 409 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 817 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search806
+[BALANCE_MANAGER] 786 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search809
+[BALANCE_MANAGER] 785 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search810
+[BALANCE_MANAGER] 778 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search715
+[BALANCE_MANAGER] 676 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search781
+[BALANCE_MANAGER] 728 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search794
+[BALANCE_MANAGER] 692 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 755 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 695 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 778 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search818
+Client: 9 balance updated. Continuing search808
+[BALANCE_MANAGER] 781 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 801 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 800 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 804 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 803 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 764 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search816
+Client: 9 balance updated. Continuing search801
+Client: 8 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search743
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search664
+Client: 8 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+[BALANCE_MANAGER] 553 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search807
+[BALANCE_MANAGER] 775 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search801
+[BALANCE_MANAGER] 762 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search803
+[BALANCE_MANAGER] 764 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search695
+[BALANCE_MANAGER] 631 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+[BALANCE_MANAGER] 818 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 813 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 797 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search708
+[BALANCE_MANAGER] 811 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 817 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 819 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 815 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 816 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 818 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 818 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search812
+[BALANCE_MANAGER] 0 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search701
+Client: 8 balance updated. Continuing search690
+Client: 8 balance updated. Continuing search673
+Client: 8 balance updated. Continuing search642
+Client: 9 balance updated. Continuing search822
+Client: 8 balance updated. Continuing search575
+Client: 9 balance updated. Continuing search817
+Client: 9 balance updated. Continuing search808
+Client: 8 balance updated. Continuing search445
+Client: 9 balance updated. Continuing search756
+Client: 9 balance updated. Continuing search711
+Client: 8 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search0
+[BALANCE_MANAGER] 0 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 821 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search820
+[BALANCE_MANAGER] 814 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+Client: 9 balance updated. Continuing search779
+[BALANCE_MANAGER] 813 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search820
+[BALANCE_MANAGER] 817 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search819
+[BALANCE_MANAGER] 808 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search816
+[BALANCE_MANAGER] 803 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search781
+[BALANCE_MANAGER] 807 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 818 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search816
+[BALANCE_MANAGER] 804 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search817
+[BALANCE_MANAGER] 802 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search811
+[BALANCE_MANAGER] 782 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search808
+[BALANCE_MANAGER] 750 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 801 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search796
+Client: 9 balance updated. Continuing search485
+[BALANCE_MANAGER] 284 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 803 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search758
+[BALANCE_MANAGER] 800 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search814
+[BALANCE_MANAGER] 795 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 801 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search816
+Client: 8 balance updated. Continuing search800
+[BALANCE_MANAGER] 754 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 642 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 782 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 789 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 786 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search708
+Client: 8 balance updated. Continuing search670
+Client: 8 balance updated. Continuing search626
+[BALANCE_MANAGER] 568 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search806
+Client: 8 balance updated. Continuing search720
+[BALANCE_MANAGER] 644 Credits added to client: 8
+Client: 8 balance updated. Continuing search564
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search822
+Client: 8 balance updated. Continuing search821
+[BALANCE_MANAGER] 817 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search807
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 820 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search821
+[BALANCE_MANAGER] 810 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search817
+[BALANCE_MANAGER] 801 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 816 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search807
+Client: 9 balance updated. Continuing search771
+[BALANCE_MANAGER] 734 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search661
+[BALANCE_MANAGER] 617 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search797
+[BALANCE_MANAGER] 723 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 794 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search717
+[BALANCE_MANAGER] 777 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 811 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search813
+[BALANCE_MANAGER] 779 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 800 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 791 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 810 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search815
+[BALANCE_MANAGER] 800 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search747
+Client: 8 balance updated. Continuing search717
+Client: 9 balance updated. Continuing search708
+Client: 8 balance updated. Continuing search543
+Client: 8 balance updated. Continuing search0
+[BALANCE_MANAGER] 0 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search0
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 819 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search819
+[BALANCE_MANAGER] 813 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search798
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search822
+[BALANCE_MANAGER] 806 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search787
+[BALANCE_MANAGER] 811 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search797
+[BALANCE_MANAGER] 783 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search811
+[BALANCE_MANAGER] 775 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search796
+[BALANCE_MANAGER] 762 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search804
+[BALANCE_MANAGER] 757 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 810 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search813
+[BALANCE_MANAGER] 794 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search814
+[BALANCE_MANAGER] 779 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search808
+[BALANCE_MANAGER] 759 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search257
+Client: 8 balance updated. Continuing search791
+Client: 8 balance updated. Continuing search0
+[BALANCE_MANAGER] 0 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+Client: 8 balance updated. Continuing search820
+[BALANCE_MANAGER] 813 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search818
+[BALANCE_MANAGER] 806 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 818 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search803
+Client: 8 balance updated. Continuing search792
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 818 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 815 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 815 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search807
+Client: 8 balance updated. Continuing search780
+Client: 9 balance updated. Continuing search770
+[BALANCE_MANAGER] 725 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search802
+[BALANCE_MANAGER] 757 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search788
+[BALANCE_MANAGER] 716 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search800
+Client: 8 balance updated. Continuing search762
+[BALANCE_MANAGER] 713 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 813 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search811
+[BALANCE_MANAGER] 782 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 773 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search810
+[BALANCE_MANAGER] 772 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 774 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 800 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 811 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search804
+[BALANCE_MANAGER] 750 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 790 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 782 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 707 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search556
+Client: 8 balance updated. Continuing search750
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search222
+[BALANCE_MANAGER] 173 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 810 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 9 balance updated. Continuing search0
+Client: 8 balance updated. Continuing search761
+Client: 8 balance updated. Continuing search727
+[BALANCE_MANAGER] 690 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search608
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 818 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 8 balance updated. Continuing search341
+Client: 9 balance updated. Continuing search806
+[BALANCE_MANAGER] 794 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 820 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 819 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 820 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+Client: 9 balance updated. Continuing search806
+Client: 9 balance updated. Continuing search798
+Client: 9 balance updated. Continuing search782
+Client: 9 balance updated. Continuing search763
+[BALANCE_MANAGER] 791 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search818
+[BALANCE_MANAGER] 804 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search813
+[BALANCE_MANAGER] 799 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search815
+[BALANCE_MANAGER] 801 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search812
+[BALANCE_MANAGER] 787 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search808
+[BALANCE_MANAGER] 776 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search806
+[BALANCE_MANAGER] 745 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 808 Credits added to client: 8
+Client: 8 balance updated. Continuing search786
+Client: 9 balance updated. Continuing search0
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 818 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search820
+[BALANCE_MANAGER] 813 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search818
+[BALANCE_MANAGER] 804 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search813
+[BALANCE_MANAGER] 785 Credits added to client: 9
+Client: 9 balance updated. Continuing search738
+Client: 8 balance updated. Continuing search0
+[BALANCE_MANAGER] Processing balance request from client: 8
+[BALANCE_MANAGER] 822 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search822
+[BALANCE_MANAGER] 821 Credits added to client: 8
+[BALANCE_MANAGER] Processing balance request from client: 8
+Client: 8 balance updated. Continuing search818
+[BALANCE_MANAGER] 813 Credits added to client: 8
+Client: 8 balance updated. Continuing search805
+[BALANCE_MANAGER] Processing balance request from client: 9
+[BALANCE_MANAGER] 822 Credits added to client: 9
+[BALANCE_MANAGER] Processing balance request from client: 9
+Client: 9 balance updated. Continuing search822
+[BALANCE_MANAGER] 819 Credits added to client: 9
+Client: 9 balance updated. Continuing search811
+[0] Search request processing finished from client: 9
+[4] Search request processing finished from client: 8
+Thread: 9 execution finished - Remaining balance: 552
+Thread: 8 execution finished - Remaining balance: 381
+Saving results from client: 9
+Saving results from client: 8
