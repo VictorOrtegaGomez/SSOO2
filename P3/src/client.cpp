@@ -5,12 +5,14 @@ clientInfo::clientInfo(){
     this->balance = NULL;
     this->type = NULL;
     this->wordToSearch = "";
+    this->duration = 0.0;
 }
 clientInfo::clientInfo(int id, int balance, int type, std::string wordToSearch){
     this->id = id;
     this->balance = balance;
     this->type = type;
     this->wordToSearch = wordToSearch;
+    this->duration = 0.0;
 }
 int clientInfo::getId(){
     return this->id;
@@ -41,4 +43,10 @@ void clientInfo::setWordToSearch(std::string wordToSearch){
 }
 void clientInfo::setResult(std::vector<threadData> result){
     this->result = result;
+}
+float clientInfo::getDuration(){
+    return this->duration;
+}
+void clientInfo::setDuration(float duration){
+    this->duration = duration;
 }

@@ -10,6 +10,7 @@ class clientInfo {
         int type;
         std::string wordToSearch;
         std::vector<threadData> result;
+        float duration;
 
     public:
         clientInfo();
@@ -24,6 +25,8 @@ class clientInfo {
         void setBalance(int balance);
         void setType(int type);
         void setWordToSearch(std::string wordToSearch);
+        float getDuration();
+        void setDuration(float duration);
 };
 
 #endif

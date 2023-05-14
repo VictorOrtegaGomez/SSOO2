@@ -209,6 +209,7 @@ void printSearchResult(std::vector<threadData> threadsDataResults,  std::shared_
         mutexLog.unlock();
         return;
     }
+    filePointer << "Duration of the execution is: " << sharedRequest->getClient()->getDuration() << "ms" << std::endl;
     for (threadData& element : threadsDataResults){
         while (!element.isEmptyList()){
             struct SearchResult result;
@@ -292,11 +293,17 @@ void createFileThreads(std::vector<threadData> *threadsDataResults, std::vector<
 
     /* We create the threads with the asocited threadData*/
     counter_threadID = 0;
+    auto start = std::chrono::high_resolution_clock::now();
     for (int i = 0; i < NUM_OF_FILES; i++) for (int z = 0; z < NUM_OF_THREADS_IN_FILE; z++, counter_threadID++)
      fileThreads->push_back(std::thread(searchWord, glbFileList[i], &threadsDataResults->at(counter_threadID), sharedRequest->getClient()));
 
     /* We wait for the threads */
     std::for_each(fileThreads->begin(), fileThreads->end(), std::mem_fn(&std::thread::join));
+    auto end = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+    /* We asigned the duration time to the client */
+    sharedRequest->getClient()->setDuration(duration);
 }
 
 /*Function that will select the type of client in a 80/20 ratio*/
