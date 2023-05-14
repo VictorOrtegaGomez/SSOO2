@@ -1,3 +1,6 @@
+/*This file contains the definition of the ThreadData class and all its methods. 
+It also includes de definition of the data structure of Search Result*/
+
 #ifndef DATATYPES.H
 #define DATATYPES.H
 #include<queue>

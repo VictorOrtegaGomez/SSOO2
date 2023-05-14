@@ -1,3 +1,5 @@
+/*This file contains the definition of the Cleint class and all its methods*/
+
 #ifndef CLIENT.H
 #define CLIENT.H
 #include<string>

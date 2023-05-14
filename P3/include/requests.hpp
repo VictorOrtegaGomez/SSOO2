@@ -1,3 +1,5 @@
+/*This file contains the definition of the Request class and all its methods*/
+
 #ifndef REQUESTS.H
 #define REQUESTS.H
 #include "client.hpp"

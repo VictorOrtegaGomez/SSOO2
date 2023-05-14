@@ -1,3 +1,5 @@
+/*This file contains the Request class and all its methods*/
+
 #include "../include/requests.hpp"
 
 request::request(clientInfo *clientUser, std::thread::id threadId, std::mutex *mutexSemaphore){

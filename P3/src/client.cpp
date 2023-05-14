@@ -1,3 +1,5 @@
+/*This file contains the Client class implementation and all its methods*/
+
 #include "../include/client.hpp"
 
 clientInfo::clientInfo(){

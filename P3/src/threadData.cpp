@@ -1,3 +1,5 @@
+/*This file contains the thredData class and all its methods*/
+
 #include "../include/dataTypes.hpp"
 
 threadData::threadData(int id, int start, int end, std::string wordToFind){

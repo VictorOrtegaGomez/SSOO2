@@ -1,3 +1,6 @@
+/*This file will be the one that will be executed in order to run the application. It contais every search funtionality and the 
+thread creation and management.*/
+
 #include <iostream>
 #include <string>
 #include "../include/dataTypes.hpp"

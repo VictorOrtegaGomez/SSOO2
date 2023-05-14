@@ -1,3 +1,5 @@
+/*This file contains the definition of every configurable variable in order to run the application as the user wishes to*/
+
 #define NON_PREMIUM_USER_WORD_LIMIT 5
 #define CLIENT_TYPES {"unlimitedPremium", "limitedPremium", "nonPremium"}
 #define NUM_CLIENT_TYPES 3
