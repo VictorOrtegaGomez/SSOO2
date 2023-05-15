@@ -189,11 +189,11 @@ void searchWord(std::string fileName, threadData* data, clientInfo* client, std:
                     mutexLog.unlock();
                 }
             }
-            
+
             /* We save de data once it is preprocesed */
+
             saveData(data, i, word, previousWord, nextWord);
             
-
             /*We keep loking for more appearances of the word in the line*/
 
             pos = lineLowerCase.find(wordToFind, pos+1);
@@ -254,15 +254,16 @@ void calculateLimits(int *upperLimit, int *lowerLimit, int numThreads, int numLi
 /*Piece of code that will be executed by the clients*/
 
 void client(int id){
-
+    std::vector<std::string> clientTypes = CLIENT_TYPES;
     /* We create the cliente with random values */
-    mutexLog.lock();
-    std::cout << "\033[0;37mClient created\033[0m" << std::endl;
-    glbLog << "Client created" << std::endl;
-    mutexLog.unlock();
 
     srand(time(NULL));
     clientInfo client_instance(id, rand() % MAX_CLIENT_BALANCE, rand() % NUM_CLIENT_TYPES, glbWordList[rand() % glbWordList.size()]);
+
+    mutexLog.lock();
+    std::cout << "\033[0;37mClient type "<< clientTypes[client_instance.getType()] << " created with ID: " << client_instance.getId() << ". Current balance: " << client_instance.getBalance() << "\033[0m" << std::endl;
+    glbLog << "Client type " << clientTypes[client_instance.getType()] << " created with ID: " << client_instance.getId() << ". Current balance: " << client_instance.getBalance() << std::endl;
+    mutexLog.unlock();
 
     /* We create the request */
     std::mutex local_mtx;
@@ -271,8 +272,10 @@ void client(int id){
     /* We initilize the unique lock for the condition variable, we ensure that the queue has a space before pushing the request*/
     std::unique_lock<std::mutex> lock(empty);
     std::shared_ptr<request> sharedReq = std::make_shared<request>(req);
+
     cvClients.wait(lock, []{return searchQueue.size() < SEARCH_QUEUE_SIZE});
     searchQueue.push_back(sharedReq);
+
     /* We advise the search system that a request is available */
     full.unlock();
     cvRequestsManager.notify_one();
@@ -390,7 +393,6 @@ void requestManager(int id){
         sharedRequest->getSemaphore()->unlock();
         fileThreads.clear();
         threadsDataResults.clear();
-        std::this_thread::sleep_for(std::chrono::seconds(2));
         
     }
     
