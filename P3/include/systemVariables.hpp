@@ -3,7 +3,7 @@
 #define NON_PREMIUM_USER_WORD_LIMIT 5
 #define CLIENT_TYPES {"unlimitedPremium", "limitedPremium", "nonPremium"}
 #define NUM_CLIENT_TYPES 3
-#define CONCURRENT_SEARCH_REQUESTS 5
+#define CONCURRENT_SEARCH_REQUESTS 10
 #define NUM_OF_THREADS_IN_FILE 10
 #define SEARCH_WORDS {"castillo", "david", "ley", "vencer", "mar", "sueño", "oro", "hasta", "casa", "cielo"}
 #define SEARCH_QUEUE_SIZE 5;
