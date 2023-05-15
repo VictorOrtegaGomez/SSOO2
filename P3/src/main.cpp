@@ -2,6 +2,7 @@
 thread creation and management.*/
 
 #include <iostream>
+
 #include <string>
 #include "../include/dataTypes.hpp"
 #include "../include/systemVariables.hpp"
@@ -420,9 +421,6 @@ void balanceManager(){
         glbLog << "[BALANCE_MANAGER]" << " Processing balance request from client: " << sharedRequest->getClient()->getId() << std::endl;
         mutexLog.unlock();
 
-        /* We advertise the search thread that the queue has a free space */
-        empty.unlock();
-        cvBalanceClients.notify_one();
 
         /*We add credits to the client*/
         srand(time(NULL));
@@ -458,12 +456,13 @@ int main(int argc, char const *argv[]){
 
         srand(time(NULL));
         int numClients = rand() % MAX_CLIENT_CREATION;
+        int maxSleepTime = rand() % MAIN_SLEEP_TIME;
 
         /*We create the client threads and then sleep*/
 
         for(int i = 0; i < numClients; i++, glbClientID++) clientThreads.push_back(std::thread(client, glbClientID));
         
-        std::this_thread::sleep_for(std::chrono::seconds(10));
+        std::this_thread::sleep_for(std::chrono::milliseconds(maxSleepTime));
     }
     
     /*We wait for every search thread to finish*/
